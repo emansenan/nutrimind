@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "dashboard": "Dashibodi",
+        "automation": "Utomati",
+        "copilots": "Wasaidizi wa AI",
+        "documents": "Hati",
+        "analytics": "Uchanganuzi",
+        "dashboards": "Dashibodi",
+        "reportBot": "Roboti ya Ripoti",
+        "reportsExplorer": "Kivinjari cha Ripoti",
+        "settings": "Mipangilio",
+        "documentation": "Nyaraka",
+        "campus": "Kampasi"
+    },
+    "copilots": {
+        "title": "Wasaidizi wa AI",
+        "subtitle": "Wasaidizi wa Akili Bandia"
+    },
+    "common": {
+        "welcome": "Karibu",
+        "logout": "Toka",
+        "login": "Ingia",
+        "email": "Barua pepe",
+        "password": "Nywila",
+        "rememberMe": "Nikumbuke",
+        "forgotPassword": "Umesahau nywila?",
+        "loading": "Inapakia...",
+        "error": "Kosa",
+        "success": "Mafanikio",
+        "save": "Hifadhi",
+        "cancel": "Ghairi",
+        "delete": "Futa",
+        "edit": "Hariri",
+        "search": "Tafuta",
+        "filter": "Chuja"
+    }
+}

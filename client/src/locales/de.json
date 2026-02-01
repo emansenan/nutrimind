@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "dashboard": "Armaturenbrett",
+        "automation": "Automatisierung",
+        "copilots": "Co-Piloten",
+        "documents": "Dokumente",
+        "analytics": "Analytik",
+        "dashboards": "Dashboards",
+        "reportBot": "Bericht-Bot",
+        "reportsExplorer": "Berichts-Explorer",
+        "settings": "Einstellungen",
+        "documentation": "Dokumentation",
+        "campus": "Campus"
+    },
+    "copilots": {
+        "title": "Co-Piloten",
+        "subtitle": "KI-Assistenten"
+    },
+    "common": {
+        "welcome": "Willkommen",
+        "logout": "Abmelden",
+        "login": "Anmelden",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "rememberMe": "Angemeldet bleiben",
+        "forgotPassword": "Passwort vergessen?",
+        "loading": "Wird geladen...",
+        "error": "Fehler",
+        "success": "Erfolg",
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "search": "Suchen",
+        "filter": "Filtern"
+    }
+}

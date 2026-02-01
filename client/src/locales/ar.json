@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "dashboard": "لوحة التحكم",
+        "automation": "الأتمتة",
+        "copilots": "المساعدون الذكيون",
+        "documents": "المستندات",
+        "analytics": "التحليلات",
+        "dashboards": "لوحات المعلومات",
+        "reportBot": "روبوت التقارير",
+        "reportsExplorer": "مستكشف التقارير",
+        "settings": "الإعدادات",
+        "documentation": "التوثيق",
+        "campus": "الحرم الجامعي"
+    },
+    "copilots": {
+        "title": "المساعدون الذكيون",
+        "subtitle": "مساعدون بالذكاء الاصطناعي"
+    },
+    "common": {
+        "welcome": "مرحبا",
+        "logout": "تسجيل الخروج",
+        "login": "تسجيل الدخول",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "rememberMe": "تذكرني",
+        "forgotPassword": "هل نسيت كلمة المرور؟",
+        "loading": "جاري التحميل...",
+        "error": "خطأ",
+        "success": "نجح",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "delete": "حذف",
+        "edit": "تعديل",
+        "search": "بحث",
+        "filter": "تصفية"
+    }
+}

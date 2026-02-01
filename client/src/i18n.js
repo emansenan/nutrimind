@@ -1,37 +1,49 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-http-backend';
+
+// Import translation files
+import enTranslations from './locales/en.json';
+import arTranslations from './locales/ar.json';
+import frTranslations from './locales/fr.json';
+import deTranslations from './locales/de.json';
+import swTranslations from './locales/sw.json';
+
+// RTL languages
+const rtlLanguages = ['ar'];
 
 i18n
-    // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
-    // learn more: https://github.com/i18next/i18next-http-backend
-    .use(Backend)
-    // detect user language
-    // learn more: https://github.com/i18next/i18next-browser-languagedetector
-    .use(LanguageDetector)
-    // pass the i18n instance to react-i18next.
     .use(initReactI18next)
-    // init i18next
-    // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
+        resources: {
+            en: { translation: enTranslations },
+            ar: { translation: arTranslations },
+            fr: { translation: frTranslations },
+            de: { translation: deTranslations },
+            sw: { translation: swTranslations }
+        },
         fallbackLng: 'en',
-        supportedLngs: ['en', 'fr', 'ar', 'de', 'sw'],
-        debug: true,
+        supportedLngs: ['en', 'ar', 'fr', 'de', 'sw'],
+        lng: localStorage.getItem('language') || 'en',
+        debug: false,
 
         interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
+            escapeValue: false, // React escapes by default
         },
-
-        // detection options
-        detection: {
-            order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
-            caches: ['localStorage', 'cookie'],
-        },
-
-        backend: {
-            loadPath: '/locales/{{lng}}/translation.json?v=' + new Date().getTime(),
-        }
     });
 
+// Handle RTL direction change
+i18n.on('languageChanged', (lng) => {
+    const dir = rtlLanguages.includes(lng) ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('dir', dir);
+    document.documentElement.setAttribute('lang', lng);
+    localStorage.setItem('language', lng);
+});
+
+// Set initial direction
+const currentLang = i18n.language;
+const dir = rtlLanguages.includes(currentLang) ? 'rtl' : 'ltr';
+document.documentElement.setAttribute('dir', dir);
+document.documentElement.setAttribute('lang', currentLang);
+
 export default i18n;
+

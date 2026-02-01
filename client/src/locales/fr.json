@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "dashboard": "Tableau de bord",
+        "automation": "Automatisation",
+        "copilots": "Co-Pilotes",
+        "documents": "Documents",
+        "analytics": "Analytique",
+        "dashboards": "Tableaux de bord",
+        "reportBot": "Robot de rapport",
+        "reportsExplorer": "Explorateur de rapports",
+        "settings": "Paramètres",
+        "documentation": "Documentation",
+        "campus": "Campus"
+    },
+    "copilots": {
+        "title": "Co-Pilotes",
+        "subtitle": "Assistants IA"
+    },
+    "common": {
+        "welcome": "Bienvenue",
+        "logout": "Déconnexion",
+        "login": "Connexion",
+        "email": "E-mail",
+        "password": "Mot de passe",
+        "rememberMe": "Se souvenir de moi",
+        "forgotPassword": "Mot de passe oublié?",
+        "loading": "Chargement...",
+        "error": "Erreur",
+        "success": "Succès",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "delete": "Supprimer",
+        "edit": "Modifier",
+        "search": "Rechercher",
+        "filter": "Filtrer"
+    }
+}
