@@ -1,24 +1,33 @@
-import { MMCard } from '@sdk';
+import React from 'react';
+import ReportBotChat from './manager/ReportBotChat';
+import { useTranslation } from 'react-i18next';
 
-// Placeholder pages for Phase 2
-export function DocumentsLibrary() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Documents Library - Phase 3</h1></MMCard>);
-}
+const ReportBotPage = () => {
+    const { t } = useTranslation();
+    return (
+        <div className="dashboard-container" style={{ paddingBottom: '2rem' }}>
+            <div style={{ padding: '0 2rem 2rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
+                {/* Page Header */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <h1 style={{ fontSize: '2rem', margin: 0, color: '#F2F3EC', fontWeight: '700' }}>
+                        {t('reportBot.title')}
+                    </h1>
+                    <p style={{
+                        margin: '0.5rem 0 0 0',
+                        color: '#888888',
+                        fontSize: '0.95rem'
+                    }}>
+                        {t('reportBot.subtitle')}
+                    </p>
+                </div>
 
-export function DashboardsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Dashboards - Phase 3</h1></MMCard>);
-}
+                {/* Report Bot Chat Component */}
+                <div>
+                    <ReportBotChat />
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export function ReportBotPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Report Bot - Phase 3</h1></MMCard>);
-}
-
-export function ReportsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Reports Explorer - Phase 3</h1></MMCard>);
-}
-
-export function SettingsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Settings - Phase 3</h1></MMCard>);
-}
-
-export default DocumentsLibrary;
+export default ReportBotPage;

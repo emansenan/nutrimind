@@ -1,27 +1,33 @@
-import { MMCard } from '@sdk';
+import React from 'react';
+import AIAgentChat from './manager/AIAgentChat';
+import { useTranslation } from 'react-i18next';
 
-function CoPilotsPage() {
+const CoPilotsPage = () => {
+    const { t } = useTranslation();
     return (
-        <div style={{ padding: '2rem' }}>
-            <h1 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                Co-Pilots
-            </h1>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                AI-powered assistants to help you work smarter.
-            </p>
-
-            <MMCard>
-                <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                    <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                        🤖 Co-Pilots Coming Soon
-                    </h2>
-                    <p style={{ color: 'var(--text-secondary)' }}>
-                        Phase 3 will integrate AI Chat components here.
+        <div className="dashboard-container" style={{ paddingBottom: '2rem' }}>
+            <div style={{ padding: '0 2rem 2rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
+                {/* Page Header */}
+                <div style={{ marginBottom: '2rem' }}>
+                    <h1 style={{ fontSize: '2rem', margin: 0, color: '#F2F3EC', fontWeight: '700' }}>
+                        {t('copilots.title')}
+                    </h1>
+                    <p style={{
+                        margin: '0.5rem 0 0 0',
+                        color: '#888888',
+                        fontSize: '0.95rem'
+                    }}>
+                        {t('copilots.subtitle')}
                     </p>
                 </div>
-            </MMCard>
+
+                {/* AI Agent Chat Component */}
+                <div>
+                    <AIAgentChat />
+                </div>
+            </div>
         </div>
     );
-}
+};
 
 export default CoPilotsPage;

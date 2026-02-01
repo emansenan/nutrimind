@@ -1,24 +1,17 @@
-import { MMCard } from '@sdk';
+import React from 'react';
+import ReportsExplorer from '../components/ReportsExplorer';
 
-// Placeholder pages for Phase 2
-export function DocumentsLibrary() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Documents Library - Phase 3</h1></MMCard>);
-}
+const ReportsPage = () => {
+    return (
+        <div className="dashboard-container" style={{ paddingBottom: '2rem' }}>
+            <div style={{ padding: '0 2rem 2rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
+                {/* Reports Explorer Component */}
+                <div>
+                    <ReportsExplorer />
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export function DashboardsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Dashboards - Phase 3</h1></MMCard>);
-}
-
-export function ReportBotPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Report Bot - Phase 3</h1></MMCard>);
-}
-
-export function ReportsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Reports Explorer - Phase 3</h1></MMCard>);
-}
-
-export function SettingsPage() {
-    return (<MMCard style={{ margin: '2rem' }}><h1>Settings - Phase 3</h1></MMCard>);
-}
-
-export default DocumentsLibrary;
+export default ReportsPage;
