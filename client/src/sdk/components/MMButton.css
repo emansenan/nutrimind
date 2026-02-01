@@ -1,0 +1,100 @@
+/* MMButton.css */
+.mm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: var(--radius-md, 8px);
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mm-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Sizes */
+.mm-btn--sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 11px;
+}
+
+.mm-btn--md {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+.mm-btn--lg {
+    height: 48px;
+    padding: 0 32px;
+    font-size: 15px;
+}
+
+/* Variants */
+.mm-btn--gold {
+    background: linear-gradient(135deg, #FFD700 0%, #E6C200 100%);
+    color: #000;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+.mm-btn--gold:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.mm-btn--glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.mm-btn--glass:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mm-btn--danger {
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+}
+
+.mm-btn--danger:hover:not(:disabled) {
+    background: rgba(255, 68, 68, 0.2);
+}
+
+.mm-btn--ghost {
+    background: transparent;
+    color: var(--text-muted, #888);
+}
+
+.mm-btn--ghost:hover:not(:disabled) {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Loader */
+.mm-btn__loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: mm-spin 0.8s linear infinite;
+}
+
+@keyframes mm-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

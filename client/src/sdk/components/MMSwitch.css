@@ -1,0 +1,70 @@
+/* MMSwitch.css */
+.mm-switch-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mm-switch-wrapper.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mm-switch-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mm-switch-slider {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: var(--bg-hover, #262626);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.mm-switch-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    background: var(--text-muted, #888);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.mm-switch-input:checked+.mm-switch-slider {
+    background: var(--primary, #E0AA3E);
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-switch-input:checked+.mm-switch-slider::before {
+    transform: translateX(20px);
+    background: #000;
+}
+
+.mm-switch-input:focus+.mm-switch-slider {
+    box-shadow: 0 0 0 2px rgba(224, 170, 62, 0.2);
+}
+
+.mm-switch-wrapper:hover:not(.disabled) .mm-switch-slider {
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-switch-label {
+    font-size: 14px;
+    color: var(--text-primary, #fff);
+}
+
+.mm-switch-wrapper.disabled .mm-switch-label {
+    color: var(--text-muted, #888);
+}

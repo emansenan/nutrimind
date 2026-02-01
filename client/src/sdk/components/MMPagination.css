@@ -1,0 +1,108 @@
+/* MMPagination.css */
+.mm-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.mm-pagination-items-per-page {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 13px;
+    color: var(--text-secondary, #ccc);
+}
+
+.mm-pagination-select {
+    background: var(--bg-input, #0F0F0F);
+    border: 1px solid var(--border-color, #333);
+    color: var(--text-primary, #fff);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.mm-pagination-select:focus {
+    outline: none;
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-pagination-info {
+    font-size: 13px;
+    color: var(--text-muted, #888);
+}
+
+.mm-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mm-pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    background: var(--bg-surface, #1C1C1C);
+    border: 1px solid var(--border-color, #333);
+    color: var(--text-primary, #fff);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.mm-pagination-btn:hover:not(:disabled) {
+    background: var(--bg-hover, #262626);
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.mm-pagination-number.active {
+    background: var(--primary, #E0AA3E);
+    color: #000;
+    border-color: var(--primary, #E0AA3E);
+    font-weight: 600;
+}
+
+.mm-pagination-nav {
+    /* Navigation buttons (arrows) */
+}
+
+.mm-pagination-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    color: var(--text-muted, #888);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mm-pagination {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mm-pagination-controls {
+        justify-content: center;
+    }
+
+    .mm-pagination-info,
+    .mm-pagination-items-per-page {
+        justify-content: center;
+    }
+}

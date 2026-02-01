@@ -1,0 +1,56 @@
+/* MMCard.css */
+.mm-card {
+    background: var(--bg-card, #1a1a1a);
+    border: 1px solid var(--border-color, #333);
+    border-radius: var(--radius-lg, 12px);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Variants */
+.mm-card--glass {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.1); /* Subtle Gold border */
+}
+
+.mm-card--solid {
+    background: var(--bg-card-solid, #111);
+}
+
+/* Hover Effect (Executive Feel) */
+.mm-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-dim, #665c2b);
+}
+
+/* Header */
+.mm-card__header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color, #333);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mm-card__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mm-card__action {
+    color: var(--text-muted, #888);
+}
+
+/* Body */
+.mm-card__body {
+    padding: 20px;
+    flex: 1;
+}

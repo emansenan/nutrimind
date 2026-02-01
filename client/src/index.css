@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MicroMind V4 Executive Gold Skin - Dark Mode (Default) */
+:root,
+[data-theme="dark"] {
+  /* Core Colors - Dark Mode */
+  --bg-page: #0F0F0F;
+  /* Deep Night */
+  --bg-surface: #1C1C1C;
+  /* Carbon */
+  --bg-input: #0F0F0F;
+  /* Input backgrounds */
+  --bg-hover: #262626;
+  /* Hover state */
+
+  --primary: #E0AA3E;
+  /* Executive Gold */
+  --text-main: #F2F3EC;
+  /* Bone White */
+  --text-muted: #888888;
+  /* Tech Grey */
+  --border: #333333;
+  /* Subtle Grey */
+
+  /* Legacy Map (Mappings to keep existing code working while we refactor) */
+  --primary-color: var(--primary);
+  --secondary-color: var(--bg-surface);
+  --bg-color: var(--bg-page);
+  --card-bg: var(--bg-surface);
+  --text-primary: var(--text-main);
+  --text-secondary: var(--text-muted);
+  --border-color: var(--border);
+
+  --accent-color: #2CA58D;
+  --danger-color: #EF4444;
+  --warning-color: #F59E0B;
+  --success-color: #10B981;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --heading-font: 'Outfit', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+}
+
+/* Light Mode Theme */
+[data-theme="light"] {
+  /* Core Colors - Light Mode */
+  --bg-page: #FFFFFF;
+  /* Pure White */
+  --bg-surface: #FFFFFF;
+  /* White */
+  --bg-input: #F9FAFB;
+  /* Light Grey Input */
+  --bg-hover: #F3F4F6;
+  /* Light Hover */
+
+  --primary: #E0AA3E;
+  /* Darker Gold for better contrast */
+  --text-main: #000000;
+  /* Pure Black */
+  --text-muted: #6B7280;
+  /* Grey 500 */
+  --border: #E5E5E5;
+  /* Light Grey Border */
+
+  /* Legacy Map - Light Mode */
+  --primary-color: var(--primary);
+  --secondary-color: var(--bg-surface);
+  --bg-color: var(--bg-page);
+  --card-bg: var(--bg-surface);
+  --text-primary: var(--text-main);
+  --text-secondary: var(--text-muted);
+  --border-color: var(--border);
+
+  --accent-color: #0D9488;
+  /* Teal 600 */
+  --danger-color: #DC2626;
+  /* Red 600 */
+  --warning-color: #D97706;
+  /* Amber 600 */
+  --success-color: #16A34A;
+  /* Green 600 */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.label {
+  font-family: var(--heading-font);
+  color: #F2F3EC;
+  margin-bottom: var(--spacing-md);
+}
+
+.subtext {
+  color: #888888;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.card,
+.white-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: none;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-main);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  /* Matches card radius */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary,
+.btn-primary-blue {
+  background-color: var(--primary);
+  color: #000000;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn-primary:hover,
+.btn-primary-blue:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #333333;
+  border: 1px solid #444444;
+  color: #F2F3EC;
+}
+
+.btn-secondary:hover {
+  background-color: #444444;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger-outline {
+  background-color: transparent;
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+.btn-danger-outline:hover {
+  background-color: rgba(217, 83, 79, 0.1);
+}
+
+/* Tables */
+.table-header {
+  background-color: var(--bg-hover) !important;
+  color: #FFC107 !important;
+  border-bottom: 1px solid #FFC107 !important;
+}
+
+.table-header th,
+.table-header-cell {
+  color: #FFC107 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 1px !important;
+  border-bottom: 1px solid #FFC107 !important;
+}
+
+.table-row {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.table-row td {
+  color: var(--text-primary) !important;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* EXECUTION GOLD SKINS EXTENSION */
+
+/* Gold Leaflet Marker - V4 Polished */
+.gold-marker-icon {
+  filter: sepia(100%) saturate(2000%) brightness(1) hue-rotate(5deg);
+}
+
+/* Leaflet Attribution - V4 Executive Gold Theme */
+.leaflet-control-attribution {
+  background-color: rgba(28, 28, 28, 0.8) !important;
+  /* Dark surface with transparency */
+  color: var(--text-muted) !important;
+  /* Tech Grey */
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 3px 8px !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--primary) !important;
+  /* Executive Gold for links */
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
+
+.leaflet-control-attribution a:hover {
+  color: #E0AA3E !important;
+  /* Darker gold on hover */
+  text-decoration: underline !important;
+}
+
+/* Ghost Pill Utils */
+/* Ghost Pill Utils - V4 Premium Update */
+.pill-ghost {
+  background-color: transparent !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  font-weight: 500;
+}
+
+.pill-ghost-success {
+  border-color: #10B981 !important;
+  color: #10B981 !important;
+}
+
+.pill-ghost-warning {
+  border-color: #64748B !important;
+  color: #64748B !important;
+}
+
+.pill-ghost-danger {
+  border-color: #EF4444 !important;
+  color: #EF4444 !important;
+}
+
+/* AI Chat User Bubble */
+.ai-user-bubble-gold {
+  background-color: transparent !important;
+  border: 1px solid #FFC107 !important;
+  color: #F2F3EC !important;
+}
+
+/* Dropdown Selection Fix (Polish Step 309) */
+option:checked {
+  background-color: #FFC107 !important;
+  color: #000000 !important;
+}
+
+/* React-Select / Generic Dropdown Active States */
+.dropdown-item.active,
+.dropdown-item:hover,
+.select__option--is-selected {
+  background-color: #FFC107 !important;
+  color: #000000 !important;
+}
+
+.select__option--is-focused {
+  background-color: #333333 !important;
+  color: #F2F3EC !important;
+}
+
+/* The Slide-Over Panel */
+.customer-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 600px;
+  /* Wide enough for data */
+  background-color: #1C1C1C;
+  /* Carbon */
+  border-left: 1px solid #FFC107;
+  /* Gold Divider */
+  box-shadow: -10px 0 25px rgba(0, 0, 0, 0.7);
+  z-index: 50;
+  /* Above everything */
+  transform: translateX(100%);
+  /* Hidden by default */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customer-drawer.open {
+  transform: translateX(0);
+}
+
+/* The Backdrop */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  /* Premium touch */
+  z-index: 40;
+}

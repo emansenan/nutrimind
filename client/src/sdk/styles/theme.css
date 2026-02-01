@@ -1,0 +1,164 @@
+/**
+ * MicroMind V4 Executive Gold Theme
+ * Central CSS variables for SDK components
+ * 
+ * This file consolidates all theme variables used by SDK components.
+ * Import this in your main app CSS or entry point.
+ */
+
+/* ========================================
+   DARK MODE (Default)
+   ======================================== */
+:root,
+[data-theme="dark"] {
+    /* Background Colors */
+    --bg-page: #0F0F0F;
+    /* Deep Night */
+    --bg-surface: #1C1C1C;
+    /* Carbon */
+    --bg-card: #1C1C1C;
+    /* Card background */
+    --bg-input: #0F0F0F;
+    /* Input backgrounds */
+    --bg-hover: #262626;
+    /* Hover state */
+
+    /* Text Colors */
+    --text-primary: #F2F3EC;
+    /* Bone White - Primary text */
+    --text-secondary: #CCCCCC;
+    /* Light Grey - Secondary text */
+    --text-muted: #888888;
+    /* Tech Grey - Muted text */
+    --text-main: #F2F3EC;
+    /* Alias for primary */
+
+    /* Border Colors */
+    --border: #333333;
+    /* Subtle Grey */
+    --border-color: #333333;
+    /* Alias */
+
+    /* Brand Colors */
+    --primary: #E0AA3E;
+    /* Executive Gold */
+    --primary-color: #E0AA3E;
+    /* Alias */
+
+    /* Semantic Colors */
+    --success-color: #10B981;
+    /* Green for success states */
+    --warning-color: #F59E0B;
+    /* Amber for warnings */
+    --danger-color: #EF4444;
+    /* Red for errors/danger */
+    --info-color: #3B82F6;
+    /* Blue for info */
+    --accent-color: #2CA58D;
+    /* Teal accent */
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    /* 4px */
+    --spacing-sm: 0.5rem;
+    /* 8px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+
+    /* Typography */
+    --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+
+    /* Shadows */
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+
+    /* Z-Index Layers */
+    --z-dropdown: 1000;
+    --z-modal: 2000;
+    --z-toast: 3000;
+}
+
+/* ========================================
+   LIGHT MODE
+   ======================================== */
+[data-theme="light"] {
+    /* Background Colors */
+    --bg-page: #FFFFFF;
+    /* Pure White */
+    --bg-surface: #FFFFFF;
+    /* White */
+    --bg-card: #FFFFFF;
+    /* Card background */
+    --bg-input: #F9FAFB;
+    /* Light Grey Input */
+    --bg-hover: #F3F4F6;
+    /* Light Hover */
+
+    /* Text Colors */
+    --text-primary: #000000;
+    /* Pure Black */
+    --text-secondary: #374151;
+    /* Grey 700 */
+    --text-muted: #6B7280;
+    /* Grey 500 */
+    --text-main: #000000;
+    /* Alias for primary */
+
+    /* Border Colors */
+    --border: #E5E5E5;
+    /* Light Grey Border */
+    --border-color: #E5E5E5;
+    /* Alias */
+
+    /* Brand Colors */
+    --primary: #E0AA3E;
+    /* Executive Gold (darker for contrast) */
+    --primary-color: #E0AA3E;
+    /* Alias */
+
+    /* Semantic Colors */
+    --success-color: #16A34A;
+    /* Green 600 */
+    --warning-color: #D97706;
+    /* Amber 600 */
+    --danger-color: #DC2626;
+    /* Red 600 */
+    --info-color: #2563EB;
+    /* Blue 600 */
+    --accent-color: #0D9488;
+    /* Teal 600 */
+
+    /* Shadows - Light mode has shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   UTILITY: Gold Gradient (For Buttons)
+   ======================================== */
+.gold-gradient {
+    background: linear-gradient(135deg, #FFD700 0%, #E0AA3E 100%);
+}
+
+/* ========================================
+   UTILITY: Glassmorphism
+   ======================================== */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,84 @@
+/* MMCalendarBoard.css */
+.mm-calendar-board {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    background: var(--bg-surface, #1e1e1e);
+    border-radius: var(--radius-lg, 12px);
+    overflow-x: auto;
+    padding: 16px;
+    border: 1px solid var(--border-color, #333);
+}
+
+.mm-calendar-grid {
+    display: flex;
+    gap: 12px;
+    height: 100%;
+    min-width: 1000px;
+    /* Ensure generic width for scrolling */
+}
+
+.mm-calendar-column {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md, 8px);
+    border: 1px solid var(--border-color, #333);
+}
+
+/* Header */
+.mm-calendar-header {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color, #444);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md, 8px) var(--radius-md, 8px) 0 0;
+}
+
+.mm-calendar-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.mm-calendar-subtitle {
+    font-size: 11px;
+    color: var(--text-muted, #888);
+    margin-top: 4px;
+}
+
+/* Droppable Area */
+.mm-calendar-droppable {
+    flex: 1;
+    padding: 8px;
+    transition: background 0.2s;
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+.mm-calendar-droppable.is-dragging-over {
+    background: rgba(255, 215, 0, 0.05);
+    /* Gold tint on hover */
+    border: 1px dashed rgba(255, 215, 0, 0.3);
+}
+
+/* Item Wrapper */
+.mm-calendar-item-wrapper {
+    margin-bottom: 8px;
+    transition: transform 0.2s;
+}
+
+.mm-calendar-item-wrapper.is-dragging {
+    opacity: 0.9;
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mm-calendar-loading {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted, #666);
+}

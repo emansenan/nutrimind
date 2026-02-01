@@ -1,0 +1,56 @@
+/* MMCheckbox.css */
+.mm-checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mm-checkbox-wrapper.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.mm-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mm-checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color, #333);
+    border-radius: 4px;
+    background: var(--bg-input, #0F0F0F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #000;
+}
+
+.mm-checkbox-input:checked+.mm-checkbox-box {
+    background: var(--primary, #E0AA3E);
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-checkbox-input:focus+.mm-checkbox-box {
+    box-shadow: 0 0 0 2px rgba(224, 170, 62, 0.2);
+}
+
+.mm-checkbox-wrapper:hover:not(.disabled) .mm-checkbox-box {
+    border-color: var(--primary, #E0AA3E);
+}
+
+.mm-checkbox-label {
+    font-size: 14px;
+    color: var(--text-primary, #fff);
+}
+
+.mm-checkbox-wrapper.disabled .mm-checkbox-label {
+    color: var(--text-muted, #888);
+}

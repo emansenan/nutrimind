@@ -1,0 +1,57 @@
+/* MMTable.css */
+.mm-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--bg-card, #1a1a1a);
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-color, #333);
+}
+
+.mm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-size: 13px;
+    text-align: left;
+}
+
+/* Header */
+.mm-table th {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-muted, #888);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color, #333);
+    white-space: nowrap;
+}
+
+/* Rows */
+.mm-table td {
+    padding: 16px 20px;
+    color: var(--text-primary, #fff);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+
+.mm-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover Effect */
+.mm-table tr:hover td {
+    background: rgba(255, 215, 0, 0.03);
+    /* Subtle Gold Tint */
+}
+
+/* States */
+.mm-table-loading,
+.mm-table-empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted, #666);
+    background: var(--bg-card, #1a1a1a);
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-color, #333);
+}

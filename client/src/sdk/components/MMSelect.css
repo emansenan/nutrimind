@@ -1,0 +1,92 @@
+/* MMSelect.css */
+.mm-select-container {
+    position: relative;
+    width: 100%;
+    min-width: 180px;
+}
+
+/* Trigger (The Box) */
+.mm-select-trigger {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    background: var(--bg-surface, #1e1e1e);
+    border: 1px solid var(--border-color, #444);
+    border-radius: var(--radius-md, 8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.mm-select-trigger:hover {
+    border-color: #666;
+}
+
+.is-open .mm-select-trigger {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+/* Value Text */
+.mm-select-value {
+    font-size: 14px;
+    color: var(--text-primary, #fff);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mm-select-value.placeholder {
+    color: var(--text-muted, #666);
+}
+
+/* Icon */
+.mm-select-icon {
+    color: var(--text-muted, #888);
+    transition: transform 0.2s ease;
+}
+
+.is-open .mm-select-icon {
+    transform: rotate(180deg);
+    color: #FFD700;
+}
+
+/* Dropdown Menu */
+.mm-select-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    max-height: 240px;
+    overflow-y: auto;
+    background: var(--bg-surface, #1e1e1e);
+    /* Use surface color for menu */
+    border: 1px solid var(--border-color, #444);
+    border-radius: var(--radius-md, 8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Options */
+.mm-select-option {
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--text-secondary, #ccc);
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.mm-select-option:hover {
+    background: rgba(255, 215, 0, 0.1);
+    /* Gold tint on hover */
+    color: #FFD700;
+}
+
+.mm-select-option.selected {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    font-weight: 600;
+}

@@ -1,0 +1,86 @@
+/* MMInput.css */
+.mm-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.mm-input-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mm-input-required {
+    color: var(--danger-color, #ef4444);
+    font-size: 14px;
+}
+
+.mm-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.mm-input-container.has-icon .mm-input {
+    padding-left: 40px;
+}
+
+.mm-input-icon {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    color: var(--text-muted, #888);
+    pointer-events: none;
+}
+
+.mm-input {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--bg-input, #0F0F0F);
+    border: 1px solid var(--border-color, #333);
+    border-radius: 4px;
+    color: var(--text-primary, #fff);
+    font-size: 14px;
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    transition: all 0.2s;
+}
+
+.mm-input::placeholder {
+    color: var(--text-muted, #888);
+}
+
+.mm-input:focus {
+    outline: none;
+    border-color: var(--primary, #E0AA3E);
+    background: var(--bg-surface, #1C1C1C);
+}
+
+.mm-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--bg-hover, #262626);
+}
+
+.mm-input-container.has-error .mm-input {
+    border-color: var(--danger-color, #ef4444);
+}
+
+.mm-input-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--danger-color, #ef4444);
+}
+
+/* Number input arrows */
+.mm-input[type="number"]::-webkit-inner-spin-button,
+.mm-input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.5;
+}
