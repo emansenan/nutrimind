@@ -1,39 +1,81 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Request logging middleware
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+    next();
+});
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'ok',
-        message: 'MicroMind Base Template Server',
-        version: '1.0.0',
-        phase: 'Phase 1 Complete'
+        timestamp: new Date().toISOString(),
+        service: 'MicroMind Base Template API',
+        version: '1.0.0'
     });
 });
 
-// Placeholder route
+// API Routes
+// TODO: Import and use your API routes here
+// Example:
+// const authRoutes = require('./routes/auth');
+// const dashboardRoutes = require('./routes/dashboards');
+// app.use('/api/auth', authRoutes);
+// app.use('/api/dashboards', dashboardRoutes);
+
+// Placeholder routes
 app.get('/api', (req, res) => {
     res.json({
-        message: 'Base Template API - Ready for Phase 2',
+        message: 'MicroMind Base Template API',
+        version: '1.0.0',
         endpoints: {
-            health: 'GET /api/health',
-            auth: 'POST /api/auth/* (Phase 2)',
-            users: 'GET /api/users/* (Phase 2)'
+            health: '/api/health',
+            auth: '/api/auth/*',
+            dashboards: '/api/dashboards/*',
+            reports: '/api/reports/*',
+            documents: '/api/documents/*'
         }
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`✅ Server running on port ${PORT}`);
-    console.log(`📊 Phase 1: Foundation Setup Complete`);
-    console.log(`🔄 Ready for Phase 2: Authentication & Navigation`);
+// 404 handler
+app.use((req, res) => {
+    res.status(404).json({
+        error: 'Not Found',
+        message: `Route ${req.method} ${req.path} not found`
+    });
 });
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(err.status || 500).json({
+        error: err.message || 'Internal Server Error',
+        ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    });
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log('');
+    console.log('🚀 MicroMind Base Template Server');
+    console.log(`📡 Server running on port ${PORT}`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`✅ Health check: http://localhost:${PORT}/api/health`);
+    console.log('');
+});
+
+module.exports = app;
