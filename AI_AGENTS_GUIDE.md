@@ -153,6 +153,44 @@ This template is a **production-ready multi-tenant SAAS platform** with authenti
 
 ---
 
+### 6. **V4_SDK_REFERENCE.md** - Frontend Component Guide ⭐⭐
+
+**Purpose:** Complete reference for V4 SDK components  
+**Location:** `/V4_SDK_REFERENCE.md`  
+**Size:** ~600 lines
+
+**THIS IS THE MOST IMPORTANT DOCUMENT FOR BUILDING THE FRONTEND!**
+
+**Key Sections:**
+
+1. **Component Props** - All props for each component
+2. **Usage Examples** - Real code examples for each component
+3. **Executive Gold Theme** - Color palette & theme variables
+4. **Common UI Patterns** - Form, list, settings patterns
+5. **Internationalization** - Using i18n with SDK
+6. **Best Practices** - Do's & Don'ts with code
+7. **Responsive Design** - Mobile-friendly patterns
+8. **Customization** - Override component styles
+9. **Troubleshooting** - Common issues & fixes
+10. **Import Reference** - All components listed
+
+**Covers All 12 Components:**
+
+- Form: MMButton, MMInput, MMSelect, MMTextarea, MMCheckbox, MMSwitch
+- Display: MMCard, MMBadge, MMTable, MMPagination, MMSearch
+- Utility: MMFilterBar
+
+**Use this when:**
+
+- Building new pages/components
+- Understanding component props
+- Learning the Executive Gold theme
+- Implementing forms, lists, tables
+- Troubleshooting UI issues
+- Customizing SDK components
+
+---
+
 ## 🏗️ Architecture Overview
 
 ### Tech Stack
@@ -357,33 +395,100 @@ MicroMind-Base-Template/
 
 **16 Premium Components** in `client/src/sdk/components/`
 
-### Form Components
+> 📘 **For complete component reference with props, examples, and patterns:**  
+> **See [V4_SDK_REFERENCE.md](./V4_SDK_REFERENCE.md)** - Comprehensive 600+ line guide!
 
-- `MMButton.jsx` - Primary/secondary/danger variants
-- `MMInput.jsx` - Text input with validation
-- `MMSelect.jsx` - Dropdown select
-- `MMCheckbox.jsx` - Checkbox with label
-- `MMSwitch.jsx` - Toggle switch
-- `MMTextarea.jsx` - Multi-line text input
-- `MMDatePicker.jsx` - Date picker
+### Quick Component Overview
 
-### Display Components
+#### Form Components (7)
 
-- `MMCard.jsx` - Container card with glassmorphism
-- `MMBadge.jsx` - Status badges
-- `MMAvatarGroup.jsx` - User avatar groups
-- `MMStats.jsx` - KPI statistics display
-- `MMProgressBar.jsx` - Progress indicator
+- **MMButton** - Interactive buttons with 4 variants (gold, glass, danger, ghost), loading states, icons
+- **MMInput** - Text inputs with validation, error display, leading icons
+- **MMSelect** - Dropdown selects with search functionality
+- **MMTextarea** - Multi-line text input with error handling
+- **MMCheckbox** - Checkbox with labels
+- **MMSwitch** - Toggle switches for boolean values
+- **MMDatePicker** - Date selection (coming soon)
 
-### Modules (Advanced)
+#### Display Components (5)
 
-- `MMMap.jsx` - Interactive maps
-- `MMChart.jsx` - Chart.js wrapper
-- `MMDataTable.jsx` - Sortable data tables
-- `MMModal.jsx` - Modal dialogs
+- **MMCard** - Container cards with glassmorphism effect
+- **MMBadge** - Status indicators (success, warning, danger, info)
+- **MMTable** - Sortable data tables
+- **MMPagination** - Pagination controls with page info
+- **MMSearch** - Search input with icons
 
-**Theme:** Executive Gold (dark/light mode)  
-**Location:** `client/src/sdk/styles/theme.css`
+#### Utility Components (4)
+
+- **MMFilterBar** - Filter chips/tags
+- **MMStats** - KPI statistics display (coming soon)
+- **MMAvatarGroup** - User avatar groups (coming soon)
+- **MMProgressBar** - Progress indicators (coming soon)
+
+### Quick Start Example
+
+```jsx
+import { MMCard, MMButton, MMInput, MMBadge } from './sdk/components';
+import { Save } from 'lucide-react';
+
+function QuickExample() {
+  return (
+    <MMCard title="Create Dashboard" subtitle="Fill in the details">
+      <MMInput
+        label="Dashboard Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      
+      <MMBadge variant="success">Active</MMBadge>
+      
+      <MMButton variant="gold" icon={<Save size={16} />}>
+        Save Dashboard
+      </MMButton>
+    </MMCard>
+  );
+}
+```
+
+### Theme & Styling
+
+**Executive Gold Theme**
+
+- Primary Color: `#E0AA3E` (Executive Gold)
+- Dark Background: `#0F0F0F` (Deep Night)
+- Surface: `#1C1C1C` with glassmorphism
+- Supports dark/light modes via `data-theme` attribute
+
+**Theme Variables in:** `client/src/sdk/styles/theme.css`
+
+```css
+/* Use theme variables in your custom CSS */
+.my-component {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+```
+
+### Component Best Practices for AI Agents
+
+**✅ Always:**
+
+1. Use SDK components instead of native HTML elements
+2. Import from `./sdk/components/ComponentName`
+3. Use theme variables (`var(--text-primary)`) for colors
+4. Include Lucide icons for better UX
+5. Add i18n keys for multi-language support
+
+**❌ Never:**
+
+1. Style components with hardcoded colors
+2. Create custom buttons/inputs when SDK has them
+3. Mix with other UI libraries
+4. Ignore loading/error states
+
+**📘 For detailed props, patterns, and examples:**  
+**→ [V4_SDK_REFERENCE.md](./V4_SDK_REFERENCE.md)**
 
 ---
 
@@ -734,21 +839,23 @@ Before starting any task, verify:
 
 **This is a production-ready multi-tenant SAAS template.**
 
-**5 Documentation Files:**
+**6 Documentation Files:**
 
 1. **README.md** - Overview (~350 lines)
 2. **SETUP.md** - Installation (~450 lines)
 3. **BRANDING.md** - Customization (~500 lines)
 4. **DEPLOYMENT.md** - Production (~550 lines)
-5. **SAAS.md** - Multi-tenancy (~900 lines) ⭐⭐⭐ **MOST IMPORTANT**
+5. **SAAS.md** - Multi-tenancy (~900 lines) ⭐⭐⭐ **Backend/Multi-Tenancy**
+6. **V4_SDK_REFERENCE.md** - UI Components (~600 lines) ⭐⭐ **Frontend/UI**
 
 **Key Takeaways:**
 
-- 🔒 **Always** filter by `organizationId` for tenant data
-- 🛡️ **Always** use `tenantContext` middleware
-- 📊 **Always** check quotas before resource creation
-- 🎨 **Use** SDK components for consistent UI
-- 🌐 **Use** i18n keys for multi-language support
-- 📚 **Read** [SAAS.md](./SAAS.md) before touching multi-tenant features
+- 🔒 **Always** filter by `organizationId` for tenant data (backend)
+- 🛡️ **Always** use `tenantContext` middleware (backend)
+- 📊 **Always** check quotas before resource creation (backend)
+- 🎨 **Always** use SDK components for consistent UI (frontend)
+- 🌐 **Always** use i18n keys for multi-language support (frontend)
+- 📚 **Read** [SAAS.md](./SAAS.md) for backend/multi-tenant features
+- 📚 **Read** [V4_SDK_REFERENCE.md](./V4_SDK_REFERENCE.md) for frontend/UI components
 
 **You're ready to build! 🚀**
