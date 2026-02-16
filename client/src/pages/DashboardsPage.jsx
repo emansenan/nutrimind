@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Plus, Search, LayoutDashboard, Loader2, Sparkles } from 'lucide-react';
-import dashboardService from '../../services/dashboardService';
-import DashboardCard from '../../components/analytics/DashboardCard';
-import DashboardForm from '../../components/analytics/DashboardForm';
+import dashboardService from '../services/dashboardService';
+import DashboardCard from '../components/analytics/DashboardCard';
+import DashboardForm from '../components/analytics/DashboardForm';
 import './DashboardsPage.css';
 
 const DashboardsPage = () => {
+    const { t } = useTranslation();
     const [dashboards, setDashboards] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
@@ -52,7 +54,7 @@ const DashboardsPage = () => {
     };
 
     const handleDeleteDashboard = async (id) => {
-        if (window.confirm('Are you sure you want to delete this dashboard?')) {
+        if (window.confirm(t('dashboardsPage.confirmDelete'))) {
             try {
                 await dashboardService.deleteDashboard(id);
                 fetchDashboards();
@@ -72,19 +74,19 @@ const DashboardsPage = () => {
             {/* Executive Header */}
             <div className="dashboards-header">
                 <div className="header-title-area">
-                    <div className="flex items-center gap-2 mb-1 text-[var(--primary)] text-xs font-bold uppercase tracking-[0.2em]">
+                    <div className="header-cockpit-label">
                         <Sparkles size={14} />
-                        <span>Intelligence Cockpit</span>
+                        <span>{t('dashboardsPage.cockpit')}</span>
                     </div>
-                    <h1>Analytics Dashboards</h1>
-                    <p>Welcome back, {managerName}. Here are your custom analytical views.</p>
+                    <h1>{t('dashboardsPage.title')}</h1>
+                    <p>{t('dashboardsPage.welcome', { name: managerName })}</p>
                 </div>
                 <button
                     onClick={() => setShowCreateModal(true)}
                     className="create-btn"
                 >
                     <Plus size={20} />
-                    <span>Create Dashboard</span>
+                    <span>{t('dashboardsPage.createDashboard')}</span>
                 </button>
             </div>
 
@@ -94,7 +96,7 @@ const DashboardsPage = () => {
                     <Search className="search-icon-pos" size={18} />
                     <input
                         type="text"
-                        placeholder="Search Intelligence Layers..."
+                        placeholder={t('dashboardsPage.searchPlaceholder')}
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="dash-search-input"
@@ -104,9 +106,9 @@ const DashboardsPage = () => {
 
             {/* Content Area */}
             {loading ? (
-                <div className="flex flex-col items-center justify-center py-20 gap-4 text-[var(--text-muted)]">
-                    <Loader2 className="animate-spin text-[var(--primary)]" size={40} />
-                    <p className="font-medium animate-pulse">Synchronizing Intelligence Layers...</p>
+                <div className="dashboards-loading">
+                    <Loader2 className="spinner" size={40} />
+                    <p>{t('dashboardsPage.syncing')}</p>
                 </div>
             ) : filteredDashboards.length > 0 ? (
                 <div className="dashboards-grid">
@@ -121,26 +123,26 @@ const DashboardsPage = () => {
             ) : (
                 <div className="empty-dashboards-container">
                     <div className="empty-icon-wrapper">
-                        <LayoutDashboard size={48} opacity={0.5} />
+                        <LayoutDashboard size={48} />
                     </div>
                     <div>
-                        <h3>No Dashboards Found</h3>
-                        <p>It looks like you haven't created any AI-powered analytical views yet.</p>
+                        <h3>{t('dashboardsPage.empty.title')}</h3>
+                        <p>{t('dashboardsPage.empty.subtitle')}</p>
                     </div>
                     <button
                         onClick={() => setShowCreateModal(true)}
                         className="empty-create-btn"
                     >
                         <Plus size={20} />
-                        <span>Deploy Your First Layer</span>
+                        <span>{t('dashboardsPage.empty.create')}</span>
                     </button>
                 </div>
             )}
 
             {showCreateModal && (
                 <DashboardForm
-                    onSuccess={handleCreateDashboard}
-                    onCancel={() => setShowCreateModal(false)}
+                    onSave={handleCreateDashboard}
+                    onClose={() => setShowCreateModal(false)}
                 />
             )}
         </div>

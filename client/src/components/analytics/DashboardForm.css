@@ -1,0 +1,409 @@
+/* DashboardForm - "New Intelligence Layer" Modal
+   MicroMind V4 Executive Gold Design System */
+
+/* =============== OVERLAY =============== */
+.df-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    padding: 24px;
+}
+
+/* =============== MODAL =============== */
+.df-modal {
+    width: 100%;
+    max-width: 820px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 16px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.df-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.df-modal::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.df-modal::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+/* =============== HEADER =============== */
+.df-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 28px 0;
+}
+
+.df-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #E0AA3E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+}
+
+.df-title {
+    color: #F2F3EC;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.df-close-btn {
+    background: none;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.df-close-btn:hover {
+    color: #F2F3EC;
+    border-color: #666;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* =============== ERROR =============== */
+.df-error {
+    margin: 16px 28px 0;
+    padding: 12px 16px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    color: #EF4444;
+    font-size: 0.85rem;
+}
+
+/* =============== FORM =============== */
+.df-form {
+    padding: 24px 28px 28px;
+}
+
+/* =============== TOP SECTION: 2-COLUMN =============== */
+.df-top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .df-top-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============== FORM FIELDS =============== */
+.df-field {
+    margin-bottom: 16px;
+}
+
+.df-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #E0AA3E;
+    margin-bottom: 8px;
+}
+
+.df-input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #F2F3EC;
+    font-size: 0.875rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.df-input:focus {
+    border-color: #E0AA3E;
+    box-shadow: 0 0 0 3px rgba(224, 170, 62, 0.1);
+}
+
+.df-input::placeholder {
+    color: #555;
+}
+
+.df-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #F2F3EC;
+    font-size: 0.875rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.df-textarea:focus {
+    border-color: #E0AA3E;
+    box-shadow: 0 0 0 3px rgba(224, 170, 62, 0.1);
+}
+
+.df-textarea::placeholder {
+    color: #555;
+}
+
+/* =============== COVER IMAGE UPLOAD =============== */
+.df-photo-upload {
+    position: relative;
+}
+
+.df-upload-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px 20px;
+    background: #1E1E1E;
+    border: 2px dashed #444;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #777;
+    text-align: center;
+    min-height: 180px;
+    box-sizing: border-box;
+}
+
+.df-upload-zone:hover,
+.df-upload-zone.drag-over {
+    border-color: #E0AA3E;
+    background: rgba(224, 170, 62, 0.03);
+    color: #E0AA3E;
+}
+
+.df-upload-link {
+    color: #E0AA3E;
+    font-weight: 600;
+}
+
+.df-upload-hint {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    margin-top: 4px;
+}
+
+.df-file-input {
+    display: none;
+}
+
+.df-photo-preview {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px dashed #444;
+    min-height: 180px;
+}
+
+.df-preview-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.df-remove-photo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.df-remove-photo:hover {
+    background: #EF4444;
+    transform: scale(1.1);
+}
+
+/* =============== CHECKBOX =============== */
+.df-checkbox-group {
+    margin-bottom: 24px;
+}
+
+.df-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.df-checkbox-label:hover {
+    color: #F2F3EC;
+}
+
+.df-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    accent-color: #E0AA3E;
+    flex-shrink: 0;
+}
+
+/* =============== AI CONFIGURATION SECTION =============== */
+.df-ai-section {
+    background: #1E1E1E;
+    border: 1px solid rgba(224, 170, 62, 0.2);
+    border-radius: 12px;
+    padding: 20px 24px 10px;
+    margin-bottom: 24px;
+}
+
+.df-ai-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #E0AA3E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+}
+
+/* Inner spacing for AI fields is handled by .df-field margin-bottom */
+
+.df-ai-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 700px) {
+    .df-ai-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============== FOOTER ACTIONS =============== */
+.df-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.df-cancel-btn {
+    padding: 12px 28px;
+    background: transparent;
+    color: #777;
+    border: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.df-cancel-btn:hover {
+    color: #F2F3EC;
+}
+
+.df-submit-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #E0AA3E 0%, #F5C451 100%);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(224, 170, 62, 0.3);
+}
+
+.df-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(224, 170, 62, 0.4);
+    background: linear-gradient(135deg, #F5C451 0%, #FFD700 100%);
+}
+
+.df-submit-btn:disabled,
+.df-cancel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =============== RTL SUPPORT =============== */
+[dir="rtl"] .df-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .df-badge {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .df-remove-photo {
+    right: auto;
+    left: 10px;
+}
+
+[dir="rtl"] .df-checkbox-label {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}

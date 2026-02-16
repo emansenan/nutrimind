@@ -4,7 +4,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { BarChart, Bar, PieChart, Pie, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
-import CustomSelect from '../../components/common/CustomSelect';
+import CustomSelect from '../components/CustomSelect';
 import { Layers } from 'lucide-react';
 
 // Component to render authenticated images
@@ -117,20 +117,23 @@ const AIAgentChat = () => {
     const [taskContext, setTaskContext] = useState('Report Generation');
     const [activeMode, setActiveMode] = useState('Conversation');
 
-    // Map context to Chatflows
+    // Map context to AI Agent IDs
+    // Configure these in your organization's AI settings or environment variables
     const getChatflowId = (context) => {
+        // Default: use a single AI Agent for all contexts
+        // Customize this mapping when you have multiple specialized agents
         switch (context) {
-            case 'Report Generation': // Visit Audit Report
-                return 'fc45b687-ed52-40c1-9878-7e6c2796d486';
-            case 'Collector Data': // Collector Performance Report
-                return '7aac52f3-d7cf-431c-a26e-3375124d1fc2';
-            case 'Weekly Planning': // Weekly Planning Assistant
-                return '065b7152-6d74-4b02-a72d-829c6ce484d0';
-            case 'Daily Actions': // Daily Actions Assistant
-                return 'a0949337-b818-4c58-bcba-1bea2becb265';
+            case 'Report Generation':
+                return null; // Uses default AI Agent from backend
+            case 'Collector Data':
+                return null; // Configure: specialized data analysis agent
+            case 'Weekly Planning':
+                return null; // Configure: planning assistant agent
+            case 'Daily Actions':
+                return null; // Configure: daily operations agent
             case 'General Inquiry':
             default:
-                return null; // Will use default in backend or main bot
+                return null; // Uses default AI Agent from backend
         }
     };
 
@@ -265,10 +268,10 @@ const AIAgentChat = () => {
         try {
             console.log('📤 Sending amended request to backend:', textToSend);
 
-            // Call our backend API which proxies to E2B
+            // Call our backend API which proxies to MicroMind Core
             const token = localStorage.getItem('token');
             const response = await fetch(
-                "http://localhost:3000/api/v1/ai/chat/e2b",
+                "http://localhost:3000/api/v1/ai/chat/micromind",
                 {
                     method: "POST",
                     headers: {
@@ -474,21 +477,21 @@ const AIAgentChat = () => {
     };
 
     return (
-        <div style={{ display: 'flex', height: '700px', backgroundColor: '#1C1C1C', fontFamily: "'Inter', sans-serif", borderRadius: '8px', overflow: 'hidden', border: '1px solid #333333' }}>
+        <div style={{ display: 'flex', height: '700px', backgroundColor: 'var(--bg-surface)', fontFamily: "'Inter', sans-serif", borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border)' }}>
 
             {/* SIDEBAR */}
             <div style={{
                 width: '300px',
-                backgroundColor: '#1C1C1C',
-                borderRight: '1px solid #333333',
+                backgroundColor: 'var(--bg-surface)',
+                borderRight: '1px solid var(--border)',
                 display: 'flex',
                 flexDirection: 'column',
                 zIndex: 20
             }}>
-                <div style={{ padding: '1.5rem', borderBottom: '1px solid #333333' }}>
+                <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                         {/* Back button removed */}
-                        <h2 style={{ margin: 0, fontSize: '1.1rem', color: '#F2F3EC' }}>{t('aiChat.title')}</h2>
+                        <h2 style={{ margin: 0, fontSize: '1.1rem', color: 'var(--text-primary)' }}>{t('aiChat.title')}</h2>
                     </div>
 
                     <button
@@ -515,10 +518,10 @@ const AIAgentChat = () => {
                 <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem' }}>
                     {/* Context Configuration */}
                     <div style={{ marginBottom: '2rem' }}>
-                        <h3 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#888888', letterSpacing: '0.05em', marginBottom: '1rem' }}>{t('aiChat.context.title')}</h3>
+                        <h3 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '0.05em', marginBottom: '1rem' }}>{t('aiChat.context.title')}</h3>
 
                         <div style={{ marginBottom: '1rem' }}>
-                            <label style={{ display: 'block', fontSize: '0.85rem', color: '#888888', marginBottom: '0.5rem' }}>{t('aiChat.context.scope')}</label>
+                            <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>{t('aiChat.context.scope')}</label>
                             <CustomSelect
                                 value={taskContext}
                                 onChange={(val) => setTaskContext(val)}
@@ -531,16 +534,13 @@ const AIAgentChat = () => {
                                 ]}
                                 icon={Layers}
                                 style={{
-                                    backgroundColor: '#262626',
-                                    '--bg-surface': '#262626',
-                                    '--border': '#333333',
-                                    '--text-primary': '#F2F3EC'
+                                    backgroundColor: 'var(--bg-hover)',
                                 }}
                             />
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', fontSize: '0.85rem', color: '#888888', marginBottom: '0.5rem' }}>{t('aiChat.context.mode')}</label>
+                            <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>{t('aiChat.context.mode')}</label>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                                 {['Conversation', 'Reports', 'Analysis'].map(mode => (
                                     <button
@@ -550,9 +550,9 @@ const AIAgentChat = () => {
                                             padding: '0.25rem 0.75rem',
                                             borderRadius: '9999px',
                                             border: '1px solid',
-                                            borderColor: activeMode === mode ? '#E0AA3E' : '#333333',
-                                            backgroundColor: activeMode === mode ? '#E0AA3E' : '#262626',
-                                            color: activeMode === mode ? '#000' : '#888888',
+                                            borderColor: activeMode === mode ? '#E0AA3E' : 'var(--border)',
+                                            backgroundColor: activeMode === mode ? '#E0AA3E' : 'var(--bg-hover)',
+                                            color: activeMode === mode ? '#000' : 'var(--text-muted)',
                                             fontSize: '0.75rem',
                                             cursor: 'pointer'
                                         }}
@@ -566,7 +566,7 @@ const AIAgentChat = () => {
 
                     {/* History */}
                     <div>
-                        <h3 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: '#888888', letterSpacing: '0.05em', marginBottom: '1rem' }}>{t('aiChat.history.title')}</h3>
+                        <h3 style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '0.05em', marginBottom: '1rem' }}>{t('aiChat.history.title')}</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                             {sessions.map(session => (
                                 <div
@@ -577,7 +577,7 @@ const AIAgentChat = () => {
                                         alignItems: 'center',
                                         gap: '0.5rem',
                                         padding: '0.75rem',
-                                        backgroundColor: currentSessionId === session.id ? '#262626' : 'transparent',
+                                        backgroundColor: currentSessionId === session.id ? 'var(--bg-hover)' : 'transparent',
                                         borderRadius: '8px',
                                         cursor: 'pointer'
                                     }}
@@ -637,7 +637,7 @@ const AIAgentChat = () => {
                                                 onClick={() => handleSelectSession(session.id)}
                                                 style={{
                                                     flex: 1,
-                                                    color: currentSessionId === session.id ? '#E0AA3E' : '#888888',
+                                                    color: currentSessionId === session.id ? '#E0AA3E' : 'var(--text-muted)',
                                                     fontSize: '0.9rem',
                                                     whiteSpace: 'nowrap',
                                                     overflow: 'hidden',
@@ -674,8 +674,8 @@ const AIAgentChat = () => {
                                                             right: 0,
                                                             top: '100%',
                                                             marginTop: '0.25rem',
-                                                            backgroundColor: '#262626',
-                                                            border: '1px solid #333333',
+                                                            backgroundColor: 'var(--bg-surface)',
+                                                            border: '1px solid var(--border)',
                                                             borderRadius: '8px',
                                                             boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
                                                             zIndex: 50,
@@ -693,7 +693,7 @@ const AIAgentChat = () => {
                                                                 border: 'none',
                                                                 cursor: 'pointer',
                                                                 fontSize: '0.85rem',
-                                                                color: '#F2F3EC',
+                                                                color: 'var(--text-primary)',
                                                                 display: 'flex',
                                                                 alignItems: 'center',
                                                                 gap: '0.5rem'
@@ -736,18 +736,15 @@ const AIAgentChat = () => {
             </div>
 
             {/* MAIN CHAT AREA */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative', backgroundColor: '#1C1C1C' }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative', backgroundColor: 'var(--bg-surface)' }}>
                 {!currentSessionId ? (
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#888888' }}>
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
                         <div style={{ marginBottom: '1.5rem' }}>
                             <img src="/assets/logo.png" alt="MicroMind Logo" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
                         </div>
-                        <h2 style={{ color: '#F2F3EC', marginBottom: '0.5rem' }}>{t('aiChat.welcome.title')}</h2>
+                        <h2 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{t('aiChat.welcome.title')}</h2>
                         <p style={{ marginBottom: '2rem', textAlign: 'center' }}>
-                            <Trans i18nKey="aiChat.welcome.subtitle" values={{ context: getContextLabel(taskContext), mode: getModeLabel(activeMode) }}>
-                                I'm ready to help with <strong>{taskContext}</strong> in <strong>{activeMode}</strong> mode.
-                                <br />Select a prompt below to start immediately.
-                            </Trans>
+                            {t('aiChat.messages.greeting', { context: getContextLabel(taskContext), mode: getModeLabel(activeMode) })}
                         </p>
 
                         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '600px' }}>
@@ -757,8 +754,8 @@ const AIAgentChat = () => {
                                     onClick={() => handleNewChat(prompt)}
                                     style={{
                                         padding: '0.75rem 1.5rem',
-                                        backgroundColor: '#262626',
-                                        border: '1px solid #333333',
+                                        backgroundColor: 'var(--bg-hover)',
+                                        border: '1px solid var(--border)',
                                         borderRadius: '9999px',
                                         color: '#E0AA3E',
                                         fontWeight: '500',
@@ -767,7 +764,7 @@ const AIAgentChat = () => {
                                         transition: 'all 0.2s'
                                     }}
                                     onMouseEnter={(e) => { e.target.style.borderColor = '#E0AA3E'; e.target.style.transform = 'translateY(-2px)'; }}
-                                    onMouseLeave={(e) => { e.target.style.borderColor = '#333333'; e.target.style.transform = 'translateY(0)'; }}
+                                    onMouseLeave={(e) => { e.target.style.borderColor = 'var(--border)'; e.target.style.transform = 'translateY(0)'; }}
                                 >
                                     {prompt}
                                 </button>
@@ -825,8 +822,8 @@ const AIAgentChat = () => {
                                                 borderRadius: '16px',
                                                 borderTopLeftRadius: msg.sender === 'ai' ? '4px' : '16px',
                                                 borderTopRadius: msg.sender === 'user' ? '4px' : '16px',
-                                                backgroundColor: msg.sender === 'user' ? 'transparent' : '#262626', // Overridden by class if user, else Dark Grey
-                                                color: msg.sender === 'user' ? '#F2F3EC' : '#F2F3EC', // Overridden by class if user
+                                                backgroundColor: msg.sender === 'user' ? 'transparent' : 'var(--bg-hover)',
+                                                color: 'var(--text-primary)',
                                                 boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
                                                 lineHeight: '1.5',
                                                 width: 'fit-content',
@@ -900,8 +897,8 @@ const AIAgentChat = () => {
                                                             ),
                                                             thead: ({ ...props }) => (
                                                                 <thead style={{
-                                                                    backgroundColor: '#333333',
-                                                                    borderBottom: '2px solid #444444'
+                                                                    backgroundColor: 'var(--bg-hover)',
+                                                                    borderBottom: '2px solid var(--border)'
                                                                 }} {...props} />
                                                             ),
                                                             th: ({ ...props }) => (
@@ -909,26 +906,26 @@ const AIAgentChat = () => {
                                                                     padding: '0.75rem',
                                                                     textAlign: 'left',
                                                                     fontWeight: '600',
-                                                                    color: '#475569',
-                                                                    borderBottom: '1px solid #e2e8f0'
+                                                                    color: 'var(--text-muted)',
+                                                                    borderBottom: '1px solid var(--border)'
                                                                 }} {...props} />
                                                             ),
                                                             td: ({ ...props }) => (
                                                                 <td style={{
                                                                     padding: '0.75rem',
-                                                                    borderBottom: '1px solid #444444',
-                                                                    color: '#F2F3EC'
+                                                                    borderBottom: '1px solid var(--border)',
+                                                                    color: 'var(--text-primary)'
                                                                 }} {...props} />
                                                             ),
                                                             tr: ({ ...props }) => (
                                                                 <tr style={{
-                                                                    borderBottom: '1px solid #444444'
+                                                                    borderBottom: '1px solid var(--border)'
                                                                 }} {...props} />
                                                             ),
                                                             code: ({ inline, ...props }) => (
                                                                 inline ?
                                                                     <code style={{
-                                                                        backgroundColor: '#262626',
+                                                                        backgroundColor: 'var(--bg-hover)',
                                                                         padding: '0.2rem 0.4rem',
                                                                         borderRadius: '4px',
                                                                         fontSize: '0.9em',
@@ -963,7 +960,7 @@ const AIAgentChat = () => {
                                     </div>
 
                                     {msg.sender === 'user' && (
-                                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: '#333333', border: '1px solid #444444', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F2F3EC', flexShrink: 0 }}>👤</div>
+                                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--bg-hover)', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-primary)', flexShrink: 0 }}>👤</div>
                                     )}
                                 </div>
                             ))}
@@ -981,7 +978,7 @@ const AIAgentChat = () => {
                                             }}
                                         />
                                     </div>
-                                    <div style={{ padding: '1rem', backgroundColor: '#262626', borderRadius: '16px', borderTopLeftRadius: '4px', color: '#888888' }}>
+                                    <div style={{ padding: '1rem', backgroundColor: 'var(--bg-hover)', borderRadius: '16px', borderTopLeftRadius: '4px', color: 'var(--text-muted)' }}>
                                         {t('aiChat.messages.thinking')}
                                     </div>
                                 </div>
@@ -990,7 +987,7 @@ const AIAgentChat = () => {
                         </div>
 
                         {/* Input Area */}
-                        <div style={{ padding: '1.5rem 2rem', backgroundColor: '#1C1C1C', borderTop: '1px solid #333333' }}>
+                        <div style={{ padding: '1.5rem 2rem', backgroundColor: 'var(--bg-surface)', borderTop: '1px solid var(--border)' }}>
                             {/* Fast Start Prompts */}
                             <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', overflowX: 'auto', paddingBottom: '0.5rem' }}>
                                 {getPrompts().map((prompt, i) => (
@@ -1002,7 +999,7 @@ const AIAgentChat = () => {
                                             borderRadius: '9999px',
                                             border: '1px solid #FFC107',
                                             backgroundColor: 'transparent',
-                                            color: '#F2F3EC',
+                                            color: 'var(--text-primary)',
                                             fontSize: '0.85rem',
                                             cursor: 'pointer',
                                             whiteSpace: 'nowrap',
@@ -1027,9 +1024,9 @@ const AIAgentChat = () => {
                                         flex: 1,
                                         padding: '1rem 1.5rem',
                                         borderRadius: '12px',
-                                        border: '1px solid #333333',
-                                        backgroundColor: '#262626',
-                                        color: '#F2F3EC',
+                                        border: '1px solid var(--border)',
+                                        backgroundColor: 'var(--bg-hover)',
+                                        color: 'var(--text-primary)',
                                         fontSize: '1rem',
                                         outline: 'none'
                                     }}

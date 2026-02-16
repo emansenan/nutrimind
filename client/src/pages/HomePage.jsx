@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MMCard } from '@sdk';
 import { TrendingUp, Users, FileText, Activity } from 'lucide-react';
 
 function HomePage() {
+    const { t } = useTranslation();
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -14,31 +16,31 @@ function HomePage() {
 
     const kpis = [
         {
-            label: 'Total Users',
+            label: t('home.kpis.totalUsers'),
             value: '1,234',
             icon: Users,
             trend: '+12%',
             color: 'var(--primary)'
         },
         {
-            label: 'Active Sessions',
+            label: t('home.kpis.activeSessions'),
             value: '89',
             icon: Activity,
             trend: '+5%',
             color: 'var(--success)'
         },
         {
-            label: 'Documents',
+            label: t('home.kpis.documents'),
             value: '456',
             icon: FileText,
             trend: '+23%',
             color: 'var(--info)'
         },
         {
-            label: 'System Health',
+            label: t('home.kpis.systemHealth'),
             value: '98%',
             icon: TrendingUp,
-            trend: 'Stable',
+            trend: t('home.kpis.stable'),
             color: 'var(--primary)'
         }
     ];
@@ -47,10 +49,10 @@ function HomePage() {
         <div style={{ padding: '2rem' }}>
             <div style={{ marginBottom: '2rem' }}>
                 <h1 style={{ fontSize: '2rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                    Welcome{user ? `, ${user.displayName || user.name}` : ''}
+                    {t('home.welcome')}{user ? `, ${user.displayName || user.name}` : ''}
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                    Here's what's happening with your application today.
+                    {t('home.subtitle')}
                 </p>
             </div>
 
@@ -97,20 +99,20 @@ function HomePage() {
             {/* Quick Actions */}
             <MMCard style={{ marginTop: '2rem' }}>
                 <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                    Quick Actions
+                    {t('home.quickActions.title')}
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
                     <button className="quick-action-btn">
-                        📊 View Dashboards
+                        📊 {t('home.quickActions.viewDashboards')}
                     </button>
                     <button className="quick-action-btn">
-                        📄 Upload Document
+                        📄 {t('home.quickActions.uploadDocument')}
                     </button>
                     <button className="quick-action-btn">
-                        🤖 Ask Co-Pilot
+                        🤖 {t('home.quickActions.askCopilot')}
                     </button>
                     <button className="quick-action-btn">
-                        📈 Generate Report
+                        📈 {t('home.quickActions.generateReport')}
                     </button>
                 </div>
             </MMCard>

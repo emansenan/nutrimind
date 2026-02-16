@@ -8,3 +8,10 @@ build/
 .idea/
 coverage/
 .nyc_output/
+package-lock.json
+Thumbs.db
+*.swp
+*.swo
+website/
+*.rar
+*.zip

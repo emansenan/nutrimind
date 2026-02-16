@@ -2,7 +2,7 @@
     "nav": {
         "dashboard": "لوحة التحكم",
         "automation": "الأتمتة",
-        "copilots": "المساعدون الذكيون",
+        "copilots": "المساعدون",
         "documents": "المستندات",
         "analytics": "التحليلات",
         "dashboards": "لوحات المعلومات",
@@ -10,28 +10,502 @@
         "reportsExplorer": "مستكشف التقارير",
         "settings": "الإعدادات",
         "documentation": "التوثيق",
-        "campus": "الحرم الجامعي"
+        "campus": "الأكاديمية",
+        "teamSync": "تيم سينك",
+        "projects": "المشاريع",
+        "tasks": "المهام",
+        "team": "الفريق",
+        "customers": "العملاء"
     },
     "copilots": {
-        "title": "المساعدون الذكيون",
+        "title": "المساعدون",
         "subtitle": "مساعدون بالذكاء الاصطناعي"
     },
+    "home": {
+        "welcome": "مرحباً",
+        "subtitle": "إليك نظرة عامة على TeamSync اليوم.",
+        "kpis": {
+            "activeTasks": "المهام النشطة",
+            "myTasks": "مهامي المفتوحة",
+            "overdue": "متأخرة",
+            "completionRate": "نسبة الإنجاز"
+        },
+        "upcomingTasks": {
+            "title": "مهامي القادمة",
+            "empty": "أنت على المسار الصحيح! لا توجد مهام معلقة.",
+            "overdue": "متأخرة",
+            "viewAll": "عرض جميع المهام",
+            "dueToday": "مستحقة اليوم",
+            "noDueDate": "بدون موعد"
+        },
+        "recentActivity": {
+            "title": "النشاط الأخير",
+            "empty": "لا يوجد نشاط حديث بعد."
+        },
+        "quickActions": {
+            "title": "إجراءات سريعة",
+            "viewDashboards": "عرض لوحات المعلومات",
+            "newProject": "مشروع جديد",
+            "viewTasks": "عرض المهام",
+            "askCopilot": "سؤال المساعد"
+        }
+    },
+    "projects": {
+        "title": "المشاريع",
+        "subtitle": "إدارة مشاريع فريقك ومتابعة التقدم",
+        "create": "مشروع جديد",
+        "searchPlaceholder": "البحث في المشاريع...",
+        "allStatuses": "جميع الحالات",
+        "noProjects": "لا توجد مشاريع بعد. أنشئ مشروعك الأول للبدء.",
+        "confirmArchive": "هل أنت متأكد أنك تريد أرشفة هذا المشروع؟",
+        "archive": "أرشفة",
+        "progress": "التقدم",
+        "kanban": "اللوحة",
+        "list": "قائمة",
+        "notFound": "المشروع غير موجود",
+        "status": {
+            "active": "نشط",
+            "onHold": "معلّق",
+            "completed": "مكتمل",
+            "archived": "مؤرشف"
+        },
+        "form": {
+            "name": "اسم المشروع",
+            "namePlaceholder": "مثال: إعادة تصميم الموقع",
+            "description": "الوصف",
+            "descriptionPlaceholder": "وصف مختصر للمشروع...",
+            "color": "اللون"
+        }
+    },
+    "tasks": {
+        "title": "المهام",
+        "subtitle": "{{count}} مهمة إجمالاً",
+        "create": "مهمة جديدة",
+        "searchPlaceholder": "البحث في المهام...",
+        "myTasks": "مهامي",
+        "allTasks": "جميع المهام",
+        "allStatuses": "جميع الحالات",
+        "allPriorities": "جميع الأولويات",
+        "allTypes": "جميع الأنواع",
+        "noTasks": "لا توجد مهام",
+        "noDescription": "لا يوجد وصف",
+        "confirmDelete": "هل أنت متأكد أنك تريد حذف هذه المهمة؟",
+        "delete": "حذف المهمة",
+        "fields": {
+            "title": "العنوان",
+            "description": "الوصف",
+            "status": "الحالة",
+            "priority": "الأولوية",
+            "type": "النوع",
+            "assignee": "المسؤول",
+            "dueDate": "تاريخ الاستحقاق",
+            "project": "المشروع",
+            "column": "عمود اللوحة"
+        },
+        "form": {
+            "titlePlaceholder": "ما الذي يجب القيام به؟",
+            "unassigned": "غير مُعيّن"
+        },
+        "priority": {
+            "critical": "حرج",
+            "high": "عالي",
+            "medium": "متوسط",
+            "low": "منخفض"
+        },
+        "type": {
+            "internal": "داخلي",
+            "customer": "عميل"
+        },
+        "drawer": {
+            "details": "التفاصيل",
+            "comments": "التعليقات",
+            "activity": "النشاط",
+            "properties": "الخصائص",
+            "subtasks": "المهام الفرعية",
+            "labels": "التصنيفات",
+            "addComment": "اكتب تعليقاً...",
+            "noComments": "لا توجد تعليقات بعد",
+            "noActivity": "لا يوجد نشاط مسجل"
+        }
+    },
+    "team": {
+        "title": "الفريق",
+        "subtitle": "إدارة الفرق والأعضاء وعبء العمل",
+        "createTeam": "فريق جديد",
+        "deleteTeam": "حذف الفريق",
+        "addMember": "إضافة عضو",
+        "selectMember": "اختر عضواً...",
+        "members": "الأعضاء",
+        "noMembers": "لا يوجد أعضاء بعد",
+        "noTeams": "لم يتم إنشاء فرق بعد",
+        "confirmDelete": "هل أنت متأكد أنك تريد حذف هذا الفريق؟",
+        "tabs": {
+            "teams": "الفرق",
+            "workload": "عبء العمل"
+        },
+        "form": {
+            "name": "اسم الفريق",
+            "description": "الوصف",
+            "color": "اللون"
+        },
+        "workload": {
+            "teamSize": "حجم الفريق",
+            "activeTasks": "المهام النشطة",
+            "avgLoad": "متوسط الحِمل",
+            "distribution": "توزيع عبء العمل",
+            "overloaded": "مُثقل",
+            "balanced": "متوازن",
+            "underloaded": "خفيف الحمل"
+        }
+    },
+    "customers": {
+        "title": "العملاء",
+        "subtitle": "{{count}} عملاء مسجلين",
+        "create": "عميل جديد",
+        "edit": "تعديل العميل",
+        "searchPlaceholder": "البحث في العملاء...",
+        "noCustomers": "لا يوجد عملاء بعد. أضف أول عميل.",
+        "confirmDeactivate": "هل أنت متأكد أنك تريد إلغاء تنشيط هذا العميل؟",
+        "tasks": "مهام",
+        "form": {
+            "name": "الاسم",
+            "company": "الشركة",
+            "email": "البريد الإلكتروني",
+            "phone": "الهاتف",
+            "notes": "ملاحظات"
+        }
+    },
+    "notifications": {
+        "title": "الإشعارات",
+        "markAllRead": "تحديد الكل كمقروء",
+        "empty": "لا توجد إشعارات"
+    },
+    "dashboardsPage": {
+        "cockpit": "مركز التحكم الذكي",
+        "title": "لوحات التحليلات",
+        "welcome": "مرحباً بعودتك، {{name}}. هنا عروضك التحليلية المخصصة.",
+        "createDashboard": "إنشاء لوحة",
+        "searchPlaceholder": "البحث في طبقات الذكاء...",
+        "syncing": "جارٍ مزامنة طبقات الذكاء...",
+        "noDescription": "بدون وصف",
+        "empty": {
+            "title": "لا توجد لوحات معلومات",
+            "subtitle": "يبدو أنك لم تنشئ أي عروض تحليلية ذكية بعد.",
+            "create": "أنشئ طبقتك الأولى"
+        },
+        "confirmDelete": "هل أنت متأكد من حذف هذه اللوحة؟",
+        "form": {
+            "badge": "مكون النظام",
+            "createTitle": "طبقة ذكاء جديدة",
+            "editTitle": "تعديل طبقة الذكاء",
+            "dashboardTitle": "عنوان اللوحة",
+            "titlePlaceholder": "مثال: محفظة المبيعات الاستراتيجية",
+            "executiveDescription": "الوصف التنفيذي",
+            "descriptionPlaceholder": "وصف الهدف التحليلي لفريق الإدارة...",
+            "visualBranding": "العلامة المرئية (الغلاف)",
+            "selectMedia": "اختر ملفاً",
+            "orDragDrop": "أو اسحب وأفلت",
+            "uploadHint": "مدعوم: PNG, JPG • الحد الأقصى 5MB",
+            "enterpriseVisibility": "رؤية المؤسسة (عامة)",
+            "aiConfig": "تكوين نقطة نهاية الذكاء الاصطناعي",
+            "queryGenerator": "مولد الاستعلام (المسار)",
+            "executionEngine": "محرك التنفيذ (API)",
+            "autoSync": "تكرار المزامنة التلقائية (دقائق)",
+            "realtime": "الوقت الفعلي (افتراضي)",
+            "backToCockpit": "العودة لمركز التحكم",
+            "deploy": "نشر طبقة الذكاء",
+            "deploying": "جارٍ النشر...",
+            "errors": {
+                "titleRequired": "العنوان مطلوب",
+                "createFailed": "فشل إنشاء اللوحة"
+            }
+        }
+    },
+    "reportsExplorer": {
+        "title": "مستكشف التقارير",
+        "subtitle": "الوصول وإنشاء التقارير الشاملة للزيارات والتحصيلات وتسجيل العملاء والمصالحات المالية",
+        "selectReport": "اختر التقرير",
+        "chooseReport": "-- اختر تقريراً --",
+        "parameters": "معلمات التقرير",
+        "execute": "تنفيذ التقرير",
+        "executing": "جارٍ التنفيذ...",
+        "results": "نتائج التقرير",
+        "recordsFound": "سجل(ات) تم العثور عليها",
+        "exportCsv": "تصدير CSV",
+        "noData": "لا توجد بيانات متاحة للمعلمات المحددة.",
+        "summaryView": "عرض ملخص",
+        "detailedView": "عرض تفصيلي",
+        "recentlyGenerated": "المُنشأ مؤخراً",
+        "columns": {
+            "reportName": "اسم التقرير",
+            "date": "التاريخ",
+            "generatedBy": "أنشأه",
+            "action": "إجراء"
+        }
+    },
+    "reportBot": {
+        "title": "روبوت التقارير",
+        "subtitle": "إنشاء وتحليل التقارير بالذكاء الاصطناعي"
+    },
+    "aiChat": {
+        "title": "المساعد الذكي",
+        "newChat": "محادثة جديدة",
+        "context": {
+            "title": "إعدادات السياق",
+            "scope": "النطاق",
+            "mode": "الوضع",
+            "scopes": {
+                "visitAudit": "تدقيق الزيارات",
+                "collections": "التحصيلات",
+                "weeklyPlanning": "التخطيط الأسبوعي",
+                "dailyActions": "الإجراءات اليومية",
+                "general": "استفسار عام"
+            },
+            "modes": {
+                "conversation": "محادثة",
+                "reports": "تقارير",
+                "analysis": "تحليل"
+            }
+        },
+        "welcome": {
+            "title": "مرحباً بك في المساعد الذكي",
+            "startBlank": "بدء محادثة فارغة"
+        },
+        "history": {
+            "title": "سجل المحادثات",
+            "untitled": "محادثة بدون عنوان",
+            "delete": "حذف",
+            "rename": "إعادة تسمية",
+            "confirmDelete": "هل أنت متأكد من حذف هذه المحادثة؟"
+        },
+        "input": {
+            "placeholder": "اكتب رسالتك...",
+            "send": "إرسال"
+        },
+        "messages": {
+            "greeting": "أنا جاهز للمساعدة في {{context}} بوضع {{mode}}. اختر سؤالاً أدناه للبدء فوراً.",
+            "welcomeBack": "مرحباً بعودتك! لنكمل مع {{context}}.",
+            "thinking": "جارٍ التفكير...",
+            "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+            "serverError": "الخادم غير متاح مؤقتاً. يرجى المحاولة لاحقاً.",
+            "networkError": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
+            "visualization": "إليك الرسم البياني بناءً على بياناتك.",
+            "loadingImage": "جارٍ تحميل الصورة...",
+            "imageError": "فشل تحميل الصورة: {{error}}"
+        },
+        "prompts": {
+            "conversation": {
+                "recent": "النشاط الأخير",
+                "team": "نظرة عامة على الفريق",
+                "risk": "تقييم المخاطر"
+            },
+            "reports": {
+                "visits": "تقارير الزيارات"
+            },
+            "analysis": {
+                "trends": "تحليل الاتجاهات"
+            },
+            "weeklyPlanning": {
+                "aging": "تحليل التقادم",
+                "balance": "نظرة عامة على الأرصدة",
+                "efficiency": "تقرير الكفاءة",
+                "gap": "تحليل الفجوات",
+                "location": "ملخص المواقع"
+            },
+            "dailyActions": {
+                "progress": "التقدم اليومي",
+                "cash": "تحصيلات نقدية",
+                "closed": "حسابات مغلقة",
+                "compliance": "فحص الامتثال",
+                "efficiency": "مقاييس الكفاءة",
+                "reschedule": "زيارات مُعاد جدولتها",
+                "risk": "تنبيهات المخاطر",
+                "stalled": "إجراءات متوقفة"
+            }
+        }
+    },
+    "documents": {
+        "title": "مكتبة المستندات",
+        "subtitle": "تصفح وإدارة مستندات الزيارات والصور والوسائط",
+        "filters": {
+            "collector": "المحصّل",
+            "allCollectors": "جميع المحصّلين",
+            "startDate": "تاريخ البداية",
+            "endDate": "تاريخ النهاية",
+            "mediaType": "نوع الوسائط",
+            "allTypes": "جميع الأنواع",
+            "search": "بحث",
+            "searchPlaceholder": "البحث بإسم العميل..."
+        },
+        "stats": {
+            "found": "مستندات تم العثور عليها"
+        },
+        "empty": {
+            "title": "لا توجد مستندات",
+            "subtitle": "حاول تعديل الفلاتر أو نطاق التاريخ."
+        },
+        "mediaTypes": {
+            "photo": "صورة",
+            "sitePhoto": "صورة الموقع",
+            "voiceNote": "ملاحظة صوتية",
+            "siteEvaluation": "تقييم الموقع"
+        },
+        "outcomes": {
+            "SUCCESS_PAYMENT": "تم الدفع",
+            "PTP": "وعد بالدفع",
+            "CLIENT_UNAVAILABLE": "العميل غير متاح",
+            "FAILURE_NO_CONTACT": "لم يتم التواصل",
+            "REJECTED": "مرفوض"
+        },
+        "table": {
+            "dateTime": "التاريخ والوقت",
+            "customer": "العميل",
+            "collector": "المحصّل",
+            "mediaType": "نوع الوسائط",
+            "outcome": "النتيجة",
+            "gpsStatus": "حالة GPS",
+            "actions": "الإجراءات",
+            "download": "تحميل"
+        }
+    },
+    "campus": {
+        "heroTitle": "أكاديمية MicroMind",
+        "heroSubtitle": "تعلّم البناء بالذكاء الاصطناعي — سواء كنت طالباً يكتشف الوكلاء الذكيين، أو مطوراً يرتقي بمهاراته، أو مؤسساً يطلق مشروعه القادم.",
+        "sectionTitle": "ماذا ستحصل عليه من الأكاديمية",
+        "sectionSubtitle": "ثلاثة مسارات مركّزة، كل منها مصمّم لنقلك من التعلّم إلى بناء منتجات حقيقية.",
+        "contactTitle": "تواصل معنا",
+        "contactSubtitle": "تواصل من خلال أي من هذه القنوات — يسعدنا سماعك.",
+        "directContact": "تواصل مباشر",
+        "followUs": "تابعنا",
+        "email": "البريد الإلكتروني",
+        "website": "الموقع الإلكتروني",
+        "discordCommunity": "مجتمع Discord",
+        "joinDiscord": "انضم إلى Discord",
+        "comingSoon": "قريباً",
+        "tracks": {
+            "aiAgent": {
+                "title": "بناء وكيل الذكاء الاصطناعي",
+                "subtitle": "مساران متخصصان",
+                "audience": "الطلاب والخريجون",
+                "bullet1": "تعلّم بناء وكلاء ذكاء اصطناعي ذكية من الصفر",
+                "bullet2": "إتقان هندسة الأوامر وأنماط التنسيق",
+                "bullet3": "العمل مع أنظمة متعددة الوكلاء في العالم الحقيقي",
+                "bullet4": "مصمم لطلاب جامعة SC والخريجين"
+            },
+            "fullStack": {
+                "title": "مهندس Full Stack مع AI",
+                "subtitle": "تطوير متسارع",
+                "audience": "المطورون",
+                "bullet1": "بناء تطبيقات جاهزة للإنتاج بسرعة غير مسبوقة",
+                "bullet2": "إتقان سير عمل التطوير بمساعدة الذكاء الاصطناعي",
+                "bullet3": "إجادة كاملة: React و Node.js و PostgreSQL",
+                "bullet4": "نشر منتجات SAAS حقيقية باستخدام قالب MicroMind"
+            },
+            "founder": {
+                "title": "المسار السريع للمؤسسين",
+                "subtitle": "من الفكرة إلى المنتج",
+                "audience": "المؤسسون",
+                "bullet1": "ابنِ تطبيقك وموقعك ومواد التسويق باستخدام الذكاء الاصطناعي",
+                "bullet2": "لا يتطلب خلفية تقنية عميقة",
+                "bullet3": "أطلق بسرعة — حسّن عمليات شركتك الناشئة",
+                "bullet4": "لكل من المؤسسين التقنيين وغير التقنيين"
+            }
+        }
+    },
+    "docs": {
+        "heroTitle": "التوثيق",
+        "heroSubtitle": "كل ما تحتاجه لنشر وتوسيع وإتقان قالب MicroMind Base SAAS.",
+        "searchPlaceholder": "البحث في التوثيق...",
+        "backToHub": "جميع المستندات",
+        "breadcrumbHub": "التوثيق",
+        "loading": "جارٍ تحميل التوثيق...",
+        "notFound": "المستند غير موجود",
+        "notFoundDesc": "المستند الذي تبحث عنه غير موجود.",
+        "loadError": "فشل التحميل",
+        "loadErrorDesc": "تعذر تحميل هذا المستند. يرجى المحاولة مرة أخرى.",
+        "comingSoon": "قريباً",
+        "document": "مستند",
+        "documents": "مستندات",
+        "aiTipTitle": "تستخدم مساعد ذكاء اصطناعي للبرمجة؟",
+        "aiTipDesc": "اجعل الذكاء الاصطناعي يقرأ .ai/constitution.md في بداية كل جلسة للالتزام التلقائي بمعايير SDK والتنسيق ومتعدد المستأجرين.",
+        "categories": {
+            "gettingStarted": "البدء",
+            "gettingStartedDesc": "دليل البدء السريع والإعداد وتعليمات النشر لتشغيل تطبيقك.",
+            "frontendSdk": "SDK الواجهة الأمامية",
+            "frontendSdkDesc": "مكتبة مكونات V4 وسمة Executive Gold وتخصيص العلامة التجارية.",
+            "backendSdk": "SDK الخادم",
+            "backendSdkDesc": "SDK الخادم مع 9 خدمات وبرمجيات وسيطة ومتحكمات ومساعدات قواعد البيانات.",
+            "aiIntegration": "تكامل الذكاء الاصطناعي",
+            "aiIntegrationDesc": "وكلاء MicroMind Core AI وإعداد Co-Pilot وأنماط التنسيق.",
+            "saasFeatures": "ميزات SAAS",
+            "saasFeaturesDesc": "متعدد المستأجرين والاشتراكات والحصص وإدارة الفريق والفوترة.",
+            "deployment": "النشر",
+            "deploymentDesc": "أدلة نشر الإنتاج لـ Vercel و AWS و Digital Ocean و VPS.",
+            "exampleApps": "تطبيقات مثالية",
+            "exampleAppsDesc": "تطبيقات MicroApps حقيقية مبنية بهذا القالب — تعلّم بالمثال.",
+            "goToMarket": "الإطلاق والتسويق",
+            "goToMarketDesc": "أنشئ مواقع ومنشورات تسويقية ومطويات مبيعات باستخدام أوامر AI.",
+            "i18n": "التدويل",
+            "i18nDesc": "دعم متعدد اللغات وتخطيطات RTL وإضافة لغات جديدة.",
+            "sdkGallery": "معرض SDK",
+            "sdkGalleryDesc": "معرض مرئي لكل مكون SDK مع معاينات حية."
+        },
+        "items": {
+            "quickStart": "البدء السريع",
+            "quickStartDesc": "دليل نشر بمساعدة AI من 10 أوامر — ابدأ في دقائق.",
+            "setup": "دليل الإعداد",
+            "setupDesc": "تعليمات تثبيت مفصلة خطوة بخطوة مع المتطلبات واستكشاف الأخطاء.",
+            "deployInstructions": "تعليمات النشر",
+            "deployInstructionsDesc": "تعليمات نشر جاهزة للـ AI لبيئة جديدة.",
+            "readme": "README",
+            "readmeDesc": "نظرة عامة على المشروع والميزات والتقنيات والمرجع السريع.",
+            "v4Sdk": "مرجع V4 SDK",
+            "v4SdkDesc": "مرجع كامل للمكونات مع الخصائص والأنماط والأمثلة.",
+            "branding": "دليل العلامة التجارية",
+            "brandingDesc": "تخصيص الشعارات والألوان والخطوط وسمة Executive Gold.",
+            "backendSdk": "دليل SDK الخادم",
+            "backendSdkDesc": "9 خدمات و8 برمجيات وسيطة ومتحكمات ومحققات وأدوات قواعد البيانات.",
+            "aiAgents": "دليل وكلاء AI",
+            "aiAgentsDesc": "فهرس كامل للوكلاء والبنية والبدء السريع لميزات AI.",
+            "saas": "بنية SAAS",
+            "saasDesc": "متعدد المستأجرين وعزل البيانات والاشتراكات والحصص والفوترة.",
+            "deployment": "دليل النشر",
+            "deploymentDesc": "4 خيارات استضافة مع CI/CD والأمان والمراقبة والنسخ الاحتياطي.",
+            "exCreditControl": "التحكم في الائتمان",
+            "exCreditControlDesc": "عمليات المحصّلين وتسجيل المخاطر وقرارات الائتمان الفورية.",
+            "exOrderCycle": "دورة الطلبات",
+            "exOrderCycleDesc": "معالجة أوامر الشراء وحجز المخزون والعمليات بالذكاء الاصطناعي.",
+            "exOtax": "OTax",
+            "exOtaxDesc": "امتثال ضريبة القيمة المضافة المصرية مع 44 نقطة نهاية API متوافقة مع ETA.",
+            "exTeamSync": "TeamSync",
+            "exTeamSyncDesc": "تعاون الفريق مع المشاريع والمهام ولوحات كانبان وإدارة العملاء.",
+            "exOracleEbs": "تكامل Oracle ERP",
+            "exOracleEbsDesc": "تدفق بيانات ETL وتعيين العملات المزدوجة ومزامنة ERP.",
+            "extendingApp": "توسيع تطبيقك",
+            "extendingAppDesc": "تسلسل أوامر AI لبناء MVP وتوسيعه صفحة بصفحة.",
+            "websiteMarketing": "الموقع والتسويق",
+            "websiteMarketingDesc": "أنشئ مواقع مخصصة ومنشورات تسويقية متعددة اللغات ومحتوى ترويجي.",
+            "salesFlyers": "مطويات المبيعات",
+            "salesFlyersDesc": "صمم مطويات A4 جاهزة للطباعة بتصميم Executive Gold."
+        }
+    },
     "common": {
-        "welcome": "مرحبا",
+        "welcome": "مرحباً",
         "logout": "تسجيل الخروج",
         "login": "تسجيل الدخول",
         "email": "البريد الإلكتروني",
         "password": "كلمة المرور",
         "rememberMe": "تذكرني",
         "forgotPassword": "هل نسيت كلمة المرور؟",
-        "loading": "جاري التحميل...",
-        "error": "خطأ",
-        "success": "نجح",
+        "loading": "جارٍ التحميل...",
+        "error": "حدث خطأ ما",
+        "success": "نجاح",
         "save": "حفظ",
         "cancel": "إلغاء",
         "delete": "حذف",
         "edit": "تعديل",
         "search": "بحث",
-        "filter": "تصفية"
+        "filter": "تصفية",
+        "add": "إضافة"
     }
 }

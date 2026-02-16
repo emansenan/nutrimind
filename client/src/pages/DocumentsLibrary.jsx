@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import managerService from '../../services/managerService';
-import CustomSelect from '../../components/common/CustomSelect';
+import managerService from '../services/managerService';
+import CustomSelect from '../components/CustomSelect';
 import { useTranslation } from 'react-i18next';
 
 const DocumentsLibrary = () => {
@@ -348,7 +348,7 @@ const DocumentsLibrary = () => {
                                         <tr
                                             key={`${doc.visit.id}-${doc.id || index}`}
                                             style={{
-                                                borderBottom: index < documents.length - 1 ? '1px solid #333333' : 'none',
+                                                borderBottom: index < documents.length - 1 ? '1px solid var(--border)' : 'none',
                                                 transition: 'background-color 0.2s'
                                             }}
                                             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-hover')}

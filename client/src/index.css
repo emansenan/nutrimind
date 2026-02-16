@@ -10,6 +10,8 @@
   /* Deep Night */
   --bg-surface: #1C1C1C;
   /* Carbon */
+  --bg-card: #1C1C1C;
+  /* Card background */
   --bg-input: #0F0F0F;
   /* Input backgrounds */
   --bg-hover: #262626;
@@ -61,6 +63,8 @@
   /* Pure White */
   --bg-surface: #FFFFFF;
   /* White */
+  --bg-card: #FFFFFF;
+  /* Card background */
   --bg-input: #F9FAFB;
   /* Light Grey Input */
   --bg-hover: #F3F4F6;
@@ -120,12 +124,12 @@ h5,
 h6,
 .label {
   font-family: var(--heading-font);
-  color: #F2F3EC;
+  color: var(--text-primary);
   margin-bottom: var(--spacing-md);
 }
 
 .subtext {
-  color: #888888;
+  color: var(--text-muted);
 }
 
 /* Utility Classes */
@@ -175,13 +179,13 @@ h6,
 }
 
 .btn-secondary {
-  background-color: #333333;
-  border: 1px solid #444444;
-  color: #F2F3EC;
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-  background-color: #444444;
+  background-color: var(--border);
 }
 
 .btn-danger {
@@ -258,10 +262,8 @@ h6,
 
 /* Leaflet Attribution - V4 Executive Gold Theme */
 .leaflet-control-attribution {
-  background-color: rgba(28, 28, 28, 0.8) !important;
-  /* Dark surface with transparency */
+  background-color: var(--bg-surface) !important;
   color: var(--text-muted) !important;
-  /* Tech Grey */
   border: 1px solid var(--border) !important;
   border-radius: 4px !important;
   padding: 3px 8px !important;
@@ -308,7 +310,7 @@ h6,
 .ai-user-bubble-gold {
   background-color: transparent !important;
   border: 1px solid #FFC107 !important;
-  color: #F2F3EC !important;
+  color: var(--text-primary) !important;
 }
 
 /* Dropdown Selection Fix (Polish Step 309) */
@@ -326,8 +328,8 @@ option:checked {
 }
 
 .select__option--is-focused {
-  background-color: #333333 !important;
-  color: #F2F3EC !important;
+  background-color: var(--bg-hover) !important;
+  color: var(--text-primary) !important;
 }
 
 /* The Slide-Over Panel */
@@ -337,16 +339,11 @@ option:checked {
   right: 0;
   height: 100vh;
   width: 600px;
-  /* Wide enough for data */
-  background-color: #1C1C1C;
-  /* Carbon */
+  background-color: var(--bg-surface);
   border-left: 1px solid #FFC107;
-  /* Gold Divider */
   box-shadow: -10px 0 25px rgba(0, 0, 0, 0.7);
   z-index: 50;
-  /* Above everything */
   transform: translateX(100%);
-  /* Hidden by default */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

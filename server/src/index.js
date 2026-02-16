@@ -29,12 +29,14 @@ app.get('/api/health', (req, res) => {
 });
 
 // API Routes
-// TODO: Import and use your API routes here
-// Example:
-// const authRoutes = require('./routes/auth');
-// const dashboardRoutes = require('./routes/dashboards');
-// app.use('/api/auth', authRoutes);
-// app.use('/api/dashboards', dashboardRoutes);
+const authRoutes = require('./routes/auth');
+const managerRoutes = require('./routes/manager');
+app.use('/api/auth', authRoutes);
+app.use('/api/manager', managerRoutes);
+const dashboardRoutes = require('./routes/dashboards');
+app.use('/api/dashboards', dashboardRoutes);
+const aiRoutes = require('./routes/ai');
+app.use('/api/v1/ai', aiRoutes);
 
 // Placeholder routes
 app.get('/api', (req, res) => {

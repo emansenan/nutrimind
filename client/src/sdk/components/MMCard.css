@@ -11,18 +11,18 @@
 
 /* Variants */
 .mm-card--glass {
-    background: rgba(20, 20, 20, 0.7);
+    background: var(--bg-card, rgba(20, 20, 20, 0.7));
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 215, 0, 0.1); /* Subtle Gold border */
+    border: 1px solid var(--border-color, rgba(255, 215, 0, 0.1));
 }
 
 .mm-card--solid {
-    background: var(--bg-card-solid, #111);
+    background: var(--bg-surface, #111);
 }
 
 /* Hover Effect (Executive Feel) */
 .mm-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-lg, 0 4px 20px rgba(0, 0, 0, 0.4));
     border-color: var(--primary-dim, #665c2b);
 }
 
@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--bg-hover, rgba(0, 0, 0, 0.2));
 }
 
 .mm-card__title {

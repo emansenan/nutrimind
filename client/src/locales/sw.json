@@ -1,37 +1,511 @@
 {
     "nav": {
         "dashboard": "Dashibodi",
-        "automation": "Utomati",
-        "copilots": "Wasaidizi wa AI",
-        "documents": "Hati",
-        "analytics": "Uchanganuzi",
+        "automation": "Otomatiki",
+        "copilots": "Wasaidizi",
+        "documents": "Nyaraka",
+        "analytics": "Uchambuzi",
         "dashboards": "Dashibodi",
         "reportBot": "Roboti ya Ripoti",
-        "reportsExplorer": "Kivinjari cha Ripoti",
+        "reportsExplorer": "Kichunguzi cha Ripoti",
         "settings": "Mipangilio",
         "documentation": "Nyaraka",
-        "campus": "Kampasi"
+        "campus": "Kampasi",
+        "teamSync": "TeamSync",
+        "projects": "Miradi",
+        "tasks": "Kazi",
+        "team": "Timu",
+        "customers": "Wateja"
     },
     "copilots": {
-        "title": "Wasaidizi wa AI",
-        "subtitle": "Wasaidizi wa Akili Bandia"
+        "title": "Wasaidizi",
+        "subtitle": "Wasaidizi wa AI"
+    },
+    "home": {
+        "welcome": "Karibu",
+        "subtitle": "Hii ni muhtasari wako wa TeamSync kwa leo.",
+        "kpis": {
+            "activeTasks": "Kazi Hai",
+            "myTasks": "Kazi Zangu Wazi",
+            "overdue": "Zimechelewa",
+            "completionRate": "Kiwango cha Kukamilika"
+        },
+        "upcomingTasks": {
+            "title": "Kazi Zangu Zijazo",
+            "empty": "Umekamilisha kila kitu! Hakuna kazi zinazongoja.",
+            "overdue": "Imechelewa",
+            "viewAll": "Tazama Kazi Zote",
+            "dueToday": "Leo Ndiyo Siku",
+            "noDueDate": "Hakuna tarehe"
+        },
+        "recentActivity": {
+            "title": "Shughuli za Hivi Karibuni",
+            "empty": "Hakuna shughuli za hivi karibuni."
+        },
+        "quickActions": {
+            "title": "Vitendo vya Haraka",
+            "viewDashboards": "Tazama Dashibodi",
+            "newProject": "Mradi Mpya",
+            "viewTasks": "Tazama Kazi",
+            "askCopilot": "Uliza Msaidizi"
+        }
+    },
+    "projects": {
+        "title": "Miradi",
+        "subtitle": "Simamia miradi ya timu yako na ufuatilie maendeleo",
+        "create": "Mradi Mpya",
+        "searchPlaceholder": "Tafuta miradi...",
+        "allStatuses": "Hali Zote",
+        "noProjects": "Hakuna miradi bado. Unda mradi wako wa kwanza.",
+        "confirmArchive": "Una uhakika unataka kuhifadhi mradi huu?",
+        "archive": "Hifadhi",
+        "progress": "Maendeleo",
+        "kanban": "Bodi",
+        "list": "Orodha",
+        "notFound": "Mradi haujapatikana",
+        "status": {
+            "active": "Hai",
+            "onHold": "Imesimamishwa",
+            "completed": "Imekamilika",
+            "archived": "Imehifadhiwa"
+        },
+        "form": {
+            "name": "Jina la Mradi",
+            "namePlaceholder": "mfano: Upya wa Tovuti",
+            "description": "Maelezo",
+            "descriptionPlaceholder": "Maelezo mafupi ya mradi...",
+            "color": "Rangi"
+        }
+    },
+    "tasks": {
+        "title": "Kazi",
+        "subtitle": "Kazi {{count}} kwa jumla",
+        "create": "Kazi Mpya",
+        "searchPlaceholder": "Tafuta kazi...",
+        "myTasks": "Kazi Zangu",
+        "allTasks": "Kazi Zote",
+        "allStatuses": "Hali Zote",
+        "allPriorities": "Vipaumbele Vyote",
+        "allTypes": "Aina Zote",
+        "noTasks": "Hakuna kazi zilizopatikana",
+        "noDescription": "Hakuna maelezo yaliyotolewa",
+        "confirmDelete": "Una uhakika unataka kufuta kazi hii?",
+        "delete": "Futa Kazi",
+        "fields": {
+            "title": "Kichwa",
+            "description": "Maelezo",
+            "status": "Hali",
+            "priority": "Kipaumbele",
+            "type": "Aina",
+            "assignee": "Mtekelezaji",
+            "dueDate": "Tarehe ya Mwisho",
+            "project": "Mradi",
+            "column": "Safu ya Bodi"
+        },
+        "form": {
+            "titlePlaceholder": "Nini kinahitaji kufanywa?",
+            "unassigned": "Haijapangiwa"
+        },
+        "priority": {
+            "critical": "Muhimu Sana",
+            "high": "Juu",
+            "medium": "Wastani",
+            "low": "Chini"
+        },
+        "type": {
+            "internal": "Ndani",
+            "customer": "Mteja"
+        },
+        "drawer": {
+            "details": "Maelezo",
+            "comments": "Maoni",
+            "activity": "Shughuli",
+            "properties": "Sifa",
+            "subtasks": "Kazi Ndogo",
+            "labels": "Lebo",
+            "addComment": "Andika maoni...",
+            "noComments": "Hakuna maoni bado",
+            "noActivity": "Hakuna shughuli zilizorekodiwa"
+        }
+    },
+    "team": {
+        "title": "Timu",
+        "subtitle": "Simamia timu, wanachama, na mzigo wa kazi",
+        "createTeam": "Timu Mpya",
+        "deleteTeam": "Futa Timu",
+        "addMember": "Ongeza Mwanachama",
+        "selectMember": "Chagua mwanachama...",
+        "members": "Wanachama",
+        "noMembers": "Hakuna wanachama bado",
+        "noTeams": "Hakuna timu zilizoundwa bado",
+        "confirmDelete": "Una uhakika unataka kufuta timu hii?",
+        "tabs": {
+            "teams": "Timu",
+            "workload": "Mzigo wa Kazi"
+        },
+        "form": {
+            "name": "Jina la Timu",
+            "description": "Maelezo",
+            "color": "Rangi"
+        },
+        "workload": {
+            "teamSize": "Ukubwa wa Timu",
+            "activeTasks": "Kazi Hai",
+            "avgLoad": "Mzigo wa Wastani",
+            "distribution": "Ugawaji wa Mzigo",
+            "overloaded": "Imezidiwa",
+            "balanced": "Imesawazishwa",
+            "underloaded": "Mzigo Mdogo"
+        }
+    },
+    "customers": {
+        "title": "Wateja",
+        "subtitle": "Wateja {{count}} wamesajiliwa",
+        "create": "Mteja Mpya",
+        "edit": "Hariri Mteja",
+        "searchPlaceholder": "Tafuta wateja...",
+        "noCustomers": "Hakuna wateja bado. Ongeza mteja wako wa kwanza.",
+        "confirmDeactivate": "Una uhakika unataka kuzima mteja huyu?",
+        "tasks": "kazi",
+        "form": {
+            "name": "Jina",
+            "company": "Kampuni",
+            "email": "Barua pepe",
+            "phone": "Simu",
+            "notes": "Maelezo"
+        }
+    },
+    "notifications": {
+        "title": "Arifa",
+        "markAllRead": "Weka zote kama zilizosomwa",
+        "empty": "Hakuna arifa"
+    },
+    "dashboardsPage": {
+        "cockpit": "Kituo cha Akili",
+        "title": "Dashibodi za Uchambuzi",
+        "welcome": "Karibu tena, {{name}}. Hapa ni maoni yako ya uchambuzi.",
+        "createDashboard": "Unda Dashibodi",
+        "searchPlaceholder": "Tafuta Tabaka za Akili...",
+        "syncing": "Inasawazisha Tabaka za Akili...",
+        "noDescription": "Hakuna maelezo",
+        "empty": {
+            "title": "Hakuna Dashibodi",
+            "subtitle": "Bado haujaunda maoni yoyote ya uchambuzi wa AI.",
+            "create": "Unda Tabaka Yako ya Kwanza"
+        },
+        "confirmDelete": "Una uhakika unataka kufuta dashibodi hii?",
+        "form": {
+            "badge": "Kipengele cha Mfumo",
+            "createTitle": "Tabaka Mpya ya Akili",
+            "editTitle": "Hariri Tabaka ya Akili",
+            "dashboardTitle": "Kichwa cha Dashibodi",
+            "titlePlaceholder": "mfano: Mkusanyiko wa Mauzo ya Kimkakati",
+            "executiveDescription": "Maelezo ya Utendaji",
+            "descriptionPlaceholder": "Eleza lengo la uchambuzi...",
+            "visualBranding": "Uonekano wa Chapa (Jalada)",
+            "selectMedia": "Chagua media",
+            "orDragDrop": "au buruta na udondoshe",
+            "uploadHint": "INASAIDIA: PNG, JPG • UPEO 5MB",
+            "enterpriseVisibility": "Uonekano wa Biashara (Umma)",
+            "aiConfig": "Usanidi wa Sehemu ya Mwisho ya AI",
+            "queryGenerator": "Kizalishaji Hoja (Njia)",
+            "executionEngine": "Injini ya Utekelezaji (API)",
+            "autoSync": "Mzunguko wa Kusawazisha (Dak)",
+            "realtime": "Wakati Halisi (Chaguo-msingi)",
+            "backToCockpit": "Rudi Kituoni",
+            "deploy": "Tumia Tabaka ya Intel",
+            "deploying": "Inatumika...",
+            "errors": {
+                "titleRequired": "Kichwa kinahitajika",
+                "createFailed": "Imeshindwa kuunda dashibodi"
+            }
+        }
+    },
+    "reportsExplorer": {
+        "title": "Kichunguzi cha Ripoti",
+        "subtitle": "Fikia na utengeneze ripoti kamili",
+        "selectReport": "Chagua Ripoti",
+        "chooseReport": "-- Chagua Ripoti --",
+        "parameters": "Vigezo vya Ripoti",
+        "execute": "Tekeleza Ripoti",
+        "executing": "Inatekelezwa...",
+        "results": "Matokeo ya Ripoti",
+        "recordsFound": "rekodi zimepatikana",
+        "exportCsv": "Hamisha CSV",
+        "noData": "Hakuna data inayopatikana.",
+        "summaryView": "Muhtasari",
+        "detailedView": "Maelezo Kamili",
+        "recentlyGenerated": "Zilizoundwa Hivi Karibuni",
+        "columns": {
+            "reportName": "Jina la Ripoti",
+            "date": "Tarehe",
+            "generatedBy": "Imeundwa Na",
+            "action": "Kitendo"
+        }
+    },
+    "reportBot": {
+        "title": "Roboti ya Ripoti",
+        "subtitle": "Uundaji na uchambuzi wa ripoti kwa AI"
+    },
+    "aiChat": {
+        "title": "Msaidizi wa AI",
+        "newChat": "Mazungumzo Mapya",
+        "context": {
+            "title": "Mipangilio ya Muktadha",
+            "scope": "Upeo",
+            "mode": "Hali",
+            "scopes": {
+                "visitAudit": "Ukaguzi wa Ziara",
+                "collections": "Makusanyo",
+                "weeklyPlanning": "Mpango wa Wiki",
+                "dailyActions": "Vitendo vya Kila Siku",
+                "general": "Swali la Kawaida"
+            },
+            "modes": {
+                "conversation": "Mazungumzo",
+                "reports": "Ripoti",
+                "analysis": "Uchambuzi"
+            }
+        },
+        "welcome": {
+            "title": "Karibu kwa Msaidizi wa AI",
+            "startBlank": "Anza Mazungumzo Tupu"
+        },
+        "history": {
+            "title": "Historia ya Mazungumzo",
+            "untitled": "Mazungumzo Yasiyo na Jina",
+            "delete": "Futa",
+            "rename": "Badilisha Jina",
+            "confirmDelete": "Futa mazungumzo haya?"
+        },
+        "input": {
+            "placeholder": "Andika ujumbe wako...",
+            "send": "Tuma"
+        },
+        "messages": {
+            "greeting": "Niko tayari kusaidia na {{context}} katika hali ya {{mode}}.",
+            "welcomeBack": "Karibu tena! Tuendelee na {{context}}.",
+            "thinking": "Inafikiria...",
+            "error": "Kitu kimekwenda vibaya. Tafadhali jaribu tena.",
+            "serverError": "Seva haipatikani kwa sasa.",
+            "networkError": "Kosa la mtandao. Angalia muunganisho wako.",
+            "visualization": "Hii ni picha ya data yako.",
+            "loadingImage": "Inapakia picha...",
+            "imageError": "Imeshindwa kupakia picha: {{error}}"
+        },
+        "prompts": {
+            "conversation": {
+                "recent": "Shughuli za Hivi Karibuni",
+                "team": "Muhtasari wa Timu",
+                "risk": "Tathmini ya Hatari"
+            },
+            "reports": {
+                "visits": "Ripoti za Ziara"
+            },
+            "analysis": {
+                "trends": "Uchambuzi wa Mwenendo"
+            },
+            "weeklyPlanning": {
+                "aging": "Uchambuzi wa Umri",
+                "balance": "Muhtasari wa Salio",
+                "efficiency": "Ripoti ya Ufanisi",
+                "gap": "Uchambuzi wa Pengo",
+                "location": "Muhtasari wa Mahali"
+            },
+            "dailyActions": {
+                "progress": "Maendeleo ya Kila Siku",
+                "cash": "Makusanyo ya Pesa Taslimu",
+                "closed": "Akaunti Zilizofungwa",
+                "compliance": "Ukaguzi wa Utiifu",
+                "efficiency": "Vipimo vya Ufanisi",
+                "reschedule": "Ziara Zilizopangwa Upya",
+                "risk": "Tahadhari za Hatari",
+                "stalled": "Vitendo Vilivyosimama"
+            }
+        }
+    },
+    "documents": {
+        "title": "Maktaba ya Nyaraka",
+        "subtitle": "Vinjari na usimamie nyaraka, picha na vyombo vya habari",
+        "filters": {
+            "collector": "Mkusanyaji",
+            "allCollectors": "Wakusanyaji Wote",
+            "startDate": "Tarehe ya Kuanza",
+            "endDate": "Tarehe ya Mwisho",
+            "mediaType": "Aina ya Media",
+            "allTypes": "Aina Zote",
+            "search": "Tafuta",
+            "searchPlaceholder": "Tafuta kwa jina la mteja..."
+        },
+        "stats": {
+            "found": "nyaraka zimepatikana"
+        },
+        "empty": {
+            "title": "Hakuna Nyaraka Zilizopatikana",
+            "subtitle": "Jaribu kubadilisha vichujio."
+        },
+        "mediaTypes": {
+            "photo": "Picha",
+            "sitePhoto": "Picha ya Eneo",
+            "voiceNote": "Ujumbe wa Sauti",
+            "siteEvaluation": "Tathmini ya Eneo"
+        },
+        "outcomes": {
+            "SUCCESS_PAYMENT": "Malipo Yamepokelewa",
+            "PTP": "Ahadi ya Malipo",
+            "CLIENT_UNAVAILABLE": "Mteja Hapatikani",
+            "FAILURE_NO_CONTACT": "Hakuna Mawasiliano",
+            "REJECTED": "Imekataliwa"
+        },
+        "table": {
+            "dateTime": "Tarehe na Saa",
+            "customer": "Mteja",
+            "collector": "Mkusanyaji",
+            "mediaType": "Aina ya Media",
+            "outcome": "Matokeo",
+            "gpsStatus": "Hali ya GPS",
+            "actions": "Vitendo",
+            "download": "Pakua"
+        }
+    },
+    "campus": {
+        "heroTitle": "Kampasi ya MicroMind",
+        "heroSubtitle": "Jifunze kujenga na AI — iwe wewe ni mwanafunzi unayegundua mawakala, msanidi anayeendelea, au mwanzilishi anayezindua mradi wako unaofuata.",
+        "sectionTitle": "Utapata Nini kutoka Kampasi",
+        "sectionSubtitle": "Nyenzo tatu zilizolenga, kila moja imeundwa kukupeleka kutoka kujifunza hadi kujenga bidhaa halisi.",
+        "contactTitle": "Wasiliana Nasi",
+        "contactSubtitle": "Wasiliana kupitia mojawapo ya njia hizi — tungependa kusikia kutoka kwako.",
+        "directContact": "Mawasiliano ya Moja kwa Moja",
+        "followUs": "Tufuate",
+        "email": "Barua Pepe",
+        "website": "Tovuti",
+        "discordCommunity": "Jamii ya Discord",
+        "joinDiscord": "Jiunge na Discord",
+        "comingSoon": "Inakuja Hivi Karibuni",
+        "tracks": {
+            "aiAgent": {
+                "title": "Mjenzi wa Wakala wa AI",
+                "subtitle": "Nyenzo 2 Maalum",
+                "audience": "Wanafunzi na Wahitimu",
+                "bullet1": "Jifunze kujenga mawakala wa AI wenye akili kutoka mwanzo",
+                "bullet2": "Kuwa bingwa wa uhandisi wa maagizo na mifumo ya uratibu",
+                "bullet3": "Fanya kazi na mifumo ya mawakala wengi ya ulimwengu halisi",
+                "bullet4": "Imeundwa kwa wanafunzi wa chuo kikuu cha SC na wahitimu"
+            },
+            "fullStack": {
+                "title": "Mhandisi wa Full Stack na AI",
+                "subtitle": "Maendeleo ya Kasi",
+                "audience": "Wasanidi",
+                "bullet1": "Jenga programu zilizo tayari kwa uzalishaji kwa kasi isiyo na kifani",
+                "bullet2": "Kuwa bingwa wa mtiririko wa maendeleo unaoongozwa na AI",
+                "bullet3": "Ujuzi kamili wa teknolojia: React, Node.js, PostgreSQL",
+                "bullet4": "Tumia bidhaa halisi za SAAS kwa kutumia kiolezo cha MicroMind"
+            },
+            "founder": {
+                "title": "Njia ya Haraka ya Mwanzilishi",
+                "subtitle": "Kutoka Wazo hadi Bidhaa",
+                "audience": "Waanzilishi",
+                "bullet1": "Jenga programu yako, tovuti, na nyenzo za masoko kwa AI",
+                "bullet2": "Hakuhitajiki ujuzi mkubwa wa kiufundi",
+                "bullet3": "Zindua haraka — boresha shughuli za ndani za startup yako",
+                "bullet4": "Kwa waanzilishi wa kiufundi na wasio wa kiufundi"
+            }
+        }
+    },
+    "docs": {
+        "heroTitle": "Nyaraka",
+        "heroSubtitle": "Kila unachohitaji kupeleka, kupanua na kumiliki Kiolezo cha MicroMind Base SAAS.",
+        "searchPlaceholder": "Tafuta nyaraka...",
+        "backToHub": "Nyaraka zote",
+        "breadcrumbHub": "Nyaraka",
+        "loading": "Inapakia nyaraka...",
+        "notFound": "Hati Haijapatikana",
+        "notFoundDesc": "Hati unayoitafuta haipo.",
+        "loadError": "Imeshindwa Kupakia",
+        "loadErrorDesc": "Haikuweza kupakia hati hii. Tafadhali jaribu tena.",
+        "comingSoon": "Inakuja Hivi Karibuni",
+        "document": "hati",
+        "documents": "nyaraka",
+        "aiTipTitle": "Unatumia msaidizi wa AI wa programu?",
+        "aiTipDesc": "Mfanye AI yako isome .ai/constitution.md mwanzoni mwa kila kikao kwa kufuata moja kwa moja viwango vya SDK, mandhari na tenanti nyingi.",
+        "categories": {
+            "gettingStarted": "Kuanza",
+            "gettingStartedDesc": "Mwongozo wa kuanza haraka, usanidi na maagizo ya kupeleka programu yako.",
+            "frontendSdk": "SDK ya Frontend",
+            "frontendSdkDesc": "Maktaba ya vipengele V4, mandhari ya Executive Gold na ubinafsishaji.",
+            "backendSdk": "SDK ya Backend",
+            "backendSdkDesc": "SDK ya seva yenye huduma 9, middleware, vidhibiti na visaidizi vya hifadhidata.",
+            "aiIntegration": "Muunganisho wa AI",
+            "aiIntegrationDesc": "Mawakala wa MicroMind Core AI, usanidi wa Co-Pilot na ruwaza za uendeshaji.",
+            "saasFeatures": "Huduma za SAAS",
+            "saasFeaturesDesc": "Tenanti nyingi, usajili, vipimo, usimamizi wa timu na malipo.",
+            "deployment": "Kupeleka",
+            "deploymentDesc": "Miongozo ya kupeleka uzalishaji kwa Vercel, AWS, Digital Ocean na VPS.",
+            "exampleApps": "Programu za Mfano",
+            "exampleAppsDesc": "MicroApps halisi zilizojengwa na kiolezo hiki — jifunze kwa mfano.",
+            "goToMarket": "Kufikia Soko",
+            "goToMarketDesc": "Tengeneza tovuti, vipeperushi vya mauzo na nyenzo za masoko kwa maagizo ya AI.",
+            "i18n": "Utaifishaji",
+            "i18nDesc": "Msaada wa lugha nyingi, mipangilio ya RTL, na kuongeza lugha mpya.",
+            "sdkGallery": "Mkusanyiko wa SDK",
+            "sdkGalleryDesc": "Mkusanyiko wa kuona wa kila kipengele cha SDK na hakiki za moja kwa moja."
+        },
+        "items": {
+            "quickStart": "Kuanza Haraka",
+            "quickStartDesc": "Mwongozo wa kupeleka kwa msaada wa AI wa hatua 10.",
+            "setup": "Mwongozo wa Usanidi",
+            "setupDesc": "Ufungaji wa kina hatua kwa hatua na mahitaji na utatuzi.",
+            "deployInstructions": "Maagizo ya Kupeleka",
+            "deployInstructionsDesc": "Maagizo ya kupeleka yaliyoandaliwa kwa AI kwa mazingira mapya.",
+            "readme": "README",
+            "readmeDesc": "Muhtasari wa mradi, huduma, teknolojia na rejea ya haraka.",
+            "v4Sdk": "Rejea ya V4 SDK",
+            "v4SdkDesc": "Rejea kamili ya vipengele yenye props, ruwaza na mifano.",
+            "branding": "Mwongozo wa Chapa",
+            "brandingDesc": "Badilisha alama, rangi, fonti na mandhari ya Executive Gold.",
+            "backendSdk": "Mwongozo wa SDK ya Backend",
+            "backendSdkDesc": "Huduma 9, middleware 8, vidhibiti, vathibitishaji na visaidizi vya DB.",
+            "aiAgents": "Mwongozo wa Mawakala wa AI",
+            "aiAgentsDesc": "Orodha kamili ya mawakala, usanifu na kuanza haraka kwa huduma za AI.",
+            "saas": "Usanifu wa SAAS",
+            "saasDesc": "Tenanti nyingi, utengaji wa data, usajili, vipimo na malipo.",
+            "deployment": "Mwongozo wa Kupeleka",
+            "deploymentDesc": "Chaguo 4 za mwenyeji na CI/CD, usalama, ufuatiliaji na uhifadhi.",
+            "exCreditControl": "Udhibiti wa Mkopo",
+            "exCreditControlDesc": "Shughuli za ukusanyaji, alama ya hatari na maamuzi ya mkopo ya wakati halisi.",
+            "exOrderCycle": "Mzunguko wa Agizo",
+            "exOrderCycleDesc": "Usindikaji wa maagizo ya ununuzi, uhifadhi wa hesabu na shughuli za AI.",
+            "exOtax": "OTax",
+            "exOtaxDesc": "Utiifu wa VAT ya Misri na maeneo 44 ya API yanayolingana na ETA.",
+            "exTeamSync": "TeamSync",
+            "exTeamSyncDesc": "Ushirikiano wa timu na miradi, kazi, bodi za Kanban na CRM.",
+            "exOracleEbs": "Muunganisho wa Oracle ERP",
+            "exOracleEbsDesc": "Mtiririko wa data wa ETL, ramani ya pesa mbili na upatanishi wa ERP.",
+            "extendingApp": "Kupanua Programu Yako",
+            "extendingAppDesc": "Mfuatano wa maagizo ya AI kuunda MVP yako na kuipanua ukurasa kwa ukurasa.",
+            "websiteMarketing": "Tovuti na Masoko",
+            "websiteMarketingDesc": "Tengeneza tovuti, machapisho ya masoko ya lugha nyingi na maudhui ya matangazo.",
+            "salesFlyers": "Vipeperushi vya Mauzo",
+            "salesFlyersDesc": "Buni vipeperushi vya A4 vilivyo tayari kuchapishwa kwa muundo wa Executive Gold."
+        }
     },
     "common": {
         "welcome": "Karibu",
-        "logout": "Toka",
+        "logout": "Ondoka",
         "login": "Ingia",
         "email": "Barua pepe",
         "password": "Nywila",
         "rememberMe": "Nikumbuke",
         "forgotPassword": "Umesahau nywila?",
         "loading": "Inapakia...",
-        "error": "Kosa",
+        "error": "Kitu kimekwenda vibaya",
         "success": "Mafanikio",
         "save": "Hifadhi",
         "cancel": "Ghairi",
         "delete": "Futa",
         "edit": "Hariri",
         "search": "Tafuta",
-        "filter": "Chuja"
+        "filter": "Chuja",
+        "add": "Ongeza"
     }
 }

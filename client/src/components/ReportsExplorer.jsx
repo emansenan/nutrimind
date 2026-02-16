@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import managerService from '../services/managerService';
-import CustomSelect from './common/CustomSelect';
+import CustomSelect from './CustomSelect';
 
 const ReportsExplorer = () => {
+    const { t } = useTranslation();
 
     const [selectedReport, setSelectedReport] = useState(() => {
         return localStorage.getItem('reportsLibrary_selectedReport') || '';
@@ -255,7 +257,7 @@ const ReportsExplorer = () => {
                             style={{
                                 padding: '0.5rem 1rem',
                                 backgroundColor: viewMode === 'summary' ? '#FFC107' : 'transparent',
-                                color: viewMode === 'summary' ? '#1C1C1C' : 'var(--text-primary)',
+                                color: viewMode === 'summary' ? '#000' : 'var(--text-primary)',
                                 border: '1px solid',
                                 borderColor: viewMode === 'summary' ? '#FFC107' : 'var(--border)',
                                 borderRadius: '4px',
@@ -271,7 +273,7 @@ const ReportsExplorer = () => {
                             style={{
                                 padding: '0.5rem 1rem',
                                 backgroundColor: viewMode === 'details' ? '#FFC107' : 'transparent',
-                                color: viewMode === 'details' ? '#1C1C1C' : 'var(--text-primary)',
+                                color: viewMode === 'details' ? '#000' : 'var(--text-primary)',
                                 border: '1px solid',
                                 borderColor: viewMode === 'details' ? '#FFC107' : 'var(--border)',
                                 borderRadius: '4px',
@@ -413,10 +415,10 @@ const ReportsExplorer = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                     <h2 style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: '0 0 0.5rem 0', fontWeight: '600' }}>
-                        Reports Explorer
+                        {t('reportsExplorer.title')}
                     </h2>
                     <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                        Access and generate comprehensive reports for visits, collections, customer onboarding, and financial reconciliation
+                        {t('reportsExplorer.subtitle')}
                     </p>
                 </div>
 
@@ -431,19 +433,19 @@ const ReportsExplorer = () => {
                 boxShadow: 'none'
             }}>
                 <h3 style={{ margin: '0 0 1rem 0', color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: '600' }}>
-                    Select Report
+                    {t('reportsExplorer.selectReport')}
                 </h3>
                 <CustomSelect
                     value={selectedReport}
                     onChange={handleReportChange}
                     options={[
-                        { value: '', label: '-- Choose a Report --' },
+                        { value: '', label: t('reportsExplorer.chooseReport') },
                         ...availableReports.map(report => ({
                             value: report.id,
                             label: report.name
                         }))
                     ]}
-                    placeholder="-- Choose a Report --"
+                    placeholder={t('reportsExplorer.chooseReport')}
                 />
 
                 {currentReport && (
@@ -624,7 +626,7 @@ const ReportsExplorer = () => {
                                 gap: '0.5rem'
                             }}
                         >
-                            Export CSV
+                            {t('reportsExplorer.exportCsv')}
                         </button>
                     </div>
                     {renderTable()}
@@ -634,7 +636,7 @@ const ReportsExplorer = () => {
             {/* Recently Generated Reports (Placeholder) */}
             <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
                 <h3 style={{ margin: '0 0 1rem 0', color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: '600' }}>
-                    Recently Generated
+                    {t('reportsExplorer.recentlyGenerated')}
                 </h3>
                 <div className="card" style={{
                     backgroundColor: 'var(--bg-surface)',
@@ -645,10 +647,10 @@ const ReportsExplorer = () => {
                     <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                         <thead>
                             <tr style={{ backgroundColor: 'var(--bg-hover)', borderBottom: '1px solid var(--border)' }}>
-                                <th style={{ padding: '1rem', textAlign: 'left', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>Report Name</th>
-                                <th style={{ padding: '1rem', textAlign: 'left', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>Date</th>
-                                <th style={{ padding: '1rem', textAlign: 'left', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>Generated By</th>
-                                <th style={{ padding: '1rem', textAlign: 'right', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>Action</th>
+                                <th style={{ padding: '1rem', textAlign: 'start', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('reportsExplorer.columns.reportName')}</th>
+                                <th style={{ padding: '1rem', textAlign: 'start', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('reportsExplorer.columns.date')}</th>
+                                <th style={{ padding: '1rem', textAlign: 'start', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('reportsExplorer.columns.generatedBy')}</th>
+                                <th style={{ padding: '1rem', textAlign: 'end', color: '#FFC107', fontWeight: '600', fontSize: '0.85rem', textTransform: 'uppercase' }}>{t('reportsExplorer.columns.action')}</th>
                             </tr>
                         </thead>
                         <tbody>

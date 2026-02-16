@@ -6,15 +6,488 @@
         "documents": "Documents",
         "analytics": "Analytique",
         "dashboards": "Tableaux de bord",
-        "reportBot": "Robot de rapport",
+        "reportBot": "Robot de rapports",
         "reportsExplorer": "Explorateur de rapports",
         "settings": "Paramètres",
         "documentation": "Documentation",
-        "campus": "Campus"
+        "campus": "Campus",
+        "teamSync": "TeamSync",
+        "projects": "Projets",
+        "tasks": "Tâches",
+        "team": "Équipe",
+        "customers": "Clients"
     },
     "copilots": {
         "title": "Co-Pilotes",
         "subtitle": "Assistants IA"
+    },
+    "home": {
+        "welcome": "Bienvenue",
+        "subtitle": "Voici votre aperçu TeamSync pour aujourd'hui.",
+        "kpis": {
+            "activeTasks": "Tâches actives",
+            "myTasks": "Mes tâches ouvertes",
+            "overdue": "En retard",
+            "completionRate": "Taux d'achèvement"
+        },
+        "upcomingTasks": {
+            "title": "Mes prochaines tâches",
+            "empty": "Tout est à jour ! Aucune tâche en attente.",
+            "overdue": "En retard",
+            "viewAll": "Voir toutes les tâches",
+            "dueToday": "Dû aujourd'hui",
+            "noDueDate": "Pas de date limite"
+        },
+        "recentActivity": {
+            "title": "Activité récente",
+            "empty": "Aucune activité récente."
+        },
+        "quickActions": {
+            "title": "Actions rapides",
+            "viewDashboards": "Voir les tableaux de bord",
+            "newProject": "Nouveau projet",
+            "viewTasks": "Voir les tâches",
+            "askCopilot": "Demander au Co-Pilote"
+        }
+    },
+    "projects": {
+        "title": "Projets",
+        "subtitle": "Gérez les projets de votre équipe et suivez la progression",
+        "create": "Nouveau projet",
+        "searchPlaceholder": "Rechercher des projets...",
+        "allStatuses": "Tous les statuts",
+        "noProjects": "Aucun projet pour l'instant. Créez votre premier projet.",
+        "confirmArchive": "Êtes-vous sûr de vouloir archiver ce projet ?",
+        "archive": "Archiver",
+        "progress": "Progression",
+        "kanban": "Tableau",
+        "list": "Liste",
+        "notFound": "Projet introuvable",
+        "status": {
+            "active": "Actif",
+            "onHold": "En pause",
+            "completed": "Terminé",
+            "archived": "Archivé"
+        },
+        "form": {
+            "name": "Nom du projet",
+            "namePlaceholder": "ex. Refonte du site web",
+            "description": "Description",
+            "descriptionPlaceholder": "Brève description du projet...",
+            "color": "Couleur"
+        }
+    },
+    "tasks": {
+        "title": "Tâches",
+        "subtitle": "{{count}} tâches au total",
+        "create": "Nouvelle tâche",
+        "searchPlaceholder": "Rechercher des tâches...",
+        "myTasks": "Mes tâches",
+        "allTasks": "Toutes les tâches",
+        "allStatuses": "Tous les statuts",
+        "allPriorities": "Toutes les priorités",
+        "allTypes": "Tous les types",
+        "noTasks": "Aucune tâche trouvée",
+        "noDescription": "Aucune description fournie",
+        "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette tâche ?",
+        "delete": "Supprimer la tâche",
+        "fields": {
+            "title": "Titre",
+            "description": "Description",
+            "status": "Statut",
+            "priority": "Priorité",
+            "type": "Type",
+            "assignee": "Responsable",
+            "dueDate": "Date d'échéance",
+            "project": "Projet",
+            "column": "Colonne du tableau"
+        },
+        "form": {
+            "titlePlaceholder": "Que faut-il faire ?",
+            "unassigned": "Non assigné"
+        },
+        "priority": {
+            "critical": "Critique",
+            "high": "Haute",
+            "medium": "Moyenne",
+            "low": "Basse"
+        },
+        "type": {
+            "internal": "Interne",
+            "customer": "Client"
+        },
+        "drawer": {
+            "details": "Détails",
+            "comments": "Commentaires",
+            "activity": "Activité",
+            "properties": "Propriétés",
+            "subtasks": "Sous-tâches",
+            "labels": "Étiquettes",
+            "addComment": "Écrire un commentaire...",
+            "noComments": "Aucun commentaire pour l'instant",
+            "noActivity": "Aucune activité enregistrée"
+        }
+    },
+    "team": {
+        "title": "Équipe",
+        "subtitle": "Gérer les équipes, les membres et la charge de travail",
+        "createTeam": "Nouvelle équipe",
+        "deleteTeam": "Supprimer l'équipe",
+        "addMember": "Ajouter un membre",
+        "selectMember": "Sélectionner un membre...",
+        "members": "Membres",
+        "noMembers": "Aucun membre pour l'instant",
+        "noTeams": "Aucune équipe créée",
+        "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette équipe ?",
+        "tabs": {
+            "teams": "Équipes",
+            "workload": "Charge de travail"
+        },
+        "form": {
+            "name": "Nom de l'équipe",
+            "description": "Description",
+            "color": "Couleur"
+        },
+        "workload": {
+            "teamSize": "Taille de l'équipe",
+            "activeTasks": "Tâches actives",
+            "avgLoad": "Charge moy.",
+            "distribution": "Répartition de la charge",
+            "overloaded": "Surchargé",
+            "balanced": "Équilibré",
+            "underloaded": "Sous-chargé"
+        }
+    },
+    "customers": {
+        "title": "Clients",
+        "subtitle": "{{count}} clients enregistrés",
+        "create": "Nouveau client",
+        "edit": "Modifier le client",
+        "searchPlaceholder": "Rechercher des clients...",
+        "noCustomers": "Aucun client. Ajoutez votre premier client.",
+        "confirmDeactivate": "Êtes-vous sûr de vouloir désactiver ce client ?",
+        "tasks": "tâches",
+        "form": {
+            "name": "Nom",
+            "company": "Entreprise",
+            "email": "E-mail",
+            "phone": "Téléphone",
+            "notes": "Notes"
+        }
+    },
+    "notifications": {
+        "title": "Notifications",
+        "markAllRead": "Tout marquer comme lu",
+        "empty": "Aucune notification"
+    },
+    "dashboardsPage": {
+        "cockpit": "Cockpit d'Intelligence",
+        "title": "Tableaux de bord analytiques",
+        "welcome": "Bon retour, {{name}}. Voici vos vues analytiques personnalisées.",
+        "createDashboard": "Créer un tableau de bord",
+        "searchPlaceholder": "Rechercher les couches d'intelligence...",
+        "syncing": "Synchronisation des couches d'intelligence...",
+        "noDescription": "Aucune description",
+        "empty": {
+            "title": "Aucun tableau de bord trouvé",
+            "subtitle": "Vous n'avez pas encore créé de vues analytiques IA.",
+            "create": "Déployer votre première couche"
+        },
+        "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce tableau de bord ?",
+        "form": {
+            "badge": "Composant Système",
+            "createTitle": "Nouvelle Couche d'Intelligence",
+            "editTitle": "Modifier la Couche d'Intelligence",
+            "dashboardTitle": "Titre du Tableau de Bord",
+            "titlePlaceholder": "ex. Portefeuille Stratégique des Ventes",
+            "executiveDescription": "Description Exécutive",
+            "descriptionPlaceholder": "Décrivez l'objectif analytique...",
+            "visualBranding": "Image de Marque (Couverture)",
+            "selectMedia": "Sélectionner un média",
+            "orDragDrop": "ou glisser-déposer",
+            "uploadHint": "SUPPORT : PNG, JPG • MAX 5 MO",
+            "enterpriseVisibility": "Visibilité Entreprise (Public)",
+            "aiConfig": "Configuration du Point de Terminaison IA",
+            "queryGenerator": "Générateur de Requêtes (Chemin)",
+            "executionEngine": "Moteur d'Exécution (API)",
+            "autoSync": "Fréquence de Synchronisation Auto (Min)",
+            "realtime": "Temps réel (Par défaut)",
+            "backToCockpit": "Retour au Cockpit",
+            "deploy": "Déployer la Couche Intel",
+            "deploying": "Déploiement...",
+            "errors": {
+                "titleRequired": "Le titre est requis",
+                "createFailed": "Échec de la création du tableau de bord"
+            }
+        }
+    },
+    "reportsExplorer": {
+        "title": "Explorateur de rapports",
+        "subtitle": "Accédez et générez des rapports complets",
+        "selectReport": "Sélectionner un rapport",
+        "chooseReport": "-- Choisir un rapport --",
+        "parameters": "Paramètres du rapport",
+        "execute": "Exécuter le rapport",
+        "executing": "Exécution...",
+        "results": "Résultats du rapport",
+        "recordsFound": "enregistrement(s) trouvé(s)",
+        "exportCsv": "Exporter CSV",
+        "noData": "Aucune donnée disponible.",
+        "summaryView": "Vue résumée",
+        "detailedView": "Vue détaillée",
+        "recentlyGenerated": "Récemment généré",
+        "columns": {
+            "reportName": "Nom du rapport",
+            "date": "Date",
+            "generatedBy": "Généré par",
+            "action": "Action"
+        }
+    },
+    "reportBot": {
+        "title": "Robot de rapports",
+        "subtitle": "Génération et analyse de rapports par IA"
+    },
+    "aiChat": {
+        "title": "Assistant IA",
+        "newChat": "Nouvelle conversation",
+        "context": {
+            "title": "Paramètres du contexte",
+            "scope": "Portée",
+            "mode": "Mode",
+            "scopes": {
+                "visitAudit": "Audit des visites",
+                "collections": "Collectes",
+                "weeklyPlanning": "Planification hebdomadaire",
+                "dailyActions": "Actions quotidiennes",
+                "general": "Demande générale"
+            },
+            "modes": {
+                "conversation": "Conversation",
+                "reports": "Rapports",
+                "analysis": "Analyse"
+            }
+        },
+        "welcome": {
+            "title": "Bienvenue dans l'Assistant IA",
+            "startBlank": "Démarrer une conversation vide"
+        },
+        "history": {
+            "title": "Historique des conversations",
+            "untitled": "Conversation sans titre",
+            "delete": "Supprimer",
+            "rename": "Renommer",
+            "confirmDelete": "Supprimer cette conversation ?"
+        },
+        "input": {
+            "placeholder": "Tapez votre message...",
+            "send": "Envoyer"
+        },
+        "messages": {
+            "greeting": "Je suis prêt à vous aider avec {{context}} en mode {{mode}}.",
+            "welcomeBack": "Bon retour ! Continuons avec {{context}}.",
+            "thinking": "Réflexion en cours...",
+            "error": "Une erreur s'est produite. Veuillez réessayer.",
+            "serverError": "Serveur temporairement indisponible.",
+            "networkError": "Erreur réseau. Vérifiez votre connexion.",
+            "visualization": "Voici la visualisation de vos données.",
+            "loadingImage": "Chargement de l'image...",
+            "imageError": "Échec du chargement de l'image : {{error}}"
+        },
+        "prompts": {
+            "conversation": {
+                "recent": "Activité récente",
+                "team": "Vue d'ensemble de l'équipe",
+                "risk": "Évaluation des risques"
+            },
+            "reports": {
+                "visits": "Rapports de visites"
+            },
+            "analysis": {
+                "trends": "Analyse des tendances"
+            },
+            "weeklyPlanning": {
+                "aging": "Analyse de l'ancienneté",
+                "balance": "Aperçu des soldes",
+                "efficiency": "Rapport d'efficacité",
+                "gap": "Analyse des écarts",
+                "location": "Résumé par localisation"
+            },
+            "dailyActions": {
+                "progress": "Progrès quotidien",
+                "cash": "Collectes en espèces",
+                "closed": "Comptes clôturés",
+                "compliance": "Vérification de conformité",
+                "efficiency": "Métriques d'efficacité",
+                "reschedule": "Visites reprogrammées",
+                "risk": "Alertes de risque",
+                "stalled": "Actions bloquées"
+            }
+        }
+    },
+    "documents": {
+        "title": "Bibliothèque de documents",
+        "subtitle": "Parcourir et gérer les documents et médias",
+        "filters": {
+            "collector": "Collecteur",
+            "allCollectors": "Tous les collecteurs",
+            "startDate": "Date de début",
+            "endDate": "Date de fin",
+            "mediaType": "Type de média",
+            "allTypes": "Tous les types",
+            "search": "Recherche",
+            "searchPlaceholder": "Rechercher par nom de client..."
+        },
+        "stats": {
+            "found": "documents trouvés"
+        },
+        "empty": {
+            "title": "Aucun document trouvé",
+            "subtitle": "Essayez de modifier vos filtres."
+        },
+        "mediaTypes": {
+            "photo": "Photo",
+            "sitePhoto": "Photo du site",
+            "voiceNote": "Note vocale",
+            "siteEvaluation": "Évaluation du site"
+        },
+        "outcomes": {
+            "SUCCESS_PAYMENT": "Paiement reçu",
+            "PTP": "Promesse de paiement",
+            "CLIENT_UNAVAILABLE": "Client indisponible",
+            "FAILURE_NO_CONTACT": "Aucun contact",
+            "REJECTED": "Rejeté"
+        },
+        "table": {
+            "dateTime": "Date et heure",
+            "customer": "Client",
+            "collector": "Collecteur",
+            "mediaType": "Type de média",
+            "outcome": "Résultat",
+            "gpsStatus": "Statut GPS",
+            "actions": "Actions",
+            "download": "Télécharger"
+        }
+    },
+    "campus": {
+        "heroTitle": "MicroMind Campus",
+        "heroSubtitle": "Apprenez à construire avec l'IA — que vous soyez étudiant découvrant les agents intelligents, développeur cherchant à progresser, ou fondateur lançant votre prochaine aventure.",
+        "sectionTitle": "Ce que vous obtiendrez du Campus",
+        "sectionSubtitle": "Trois parcours ciblés, chacun conçu pour vous faire passer de l'apprentissage à la création de vrais produits.",
+        "contactTitle": "Contactez-nous",
+        "contactSubtitle": "Contactez-nous par l'un de ces canaux — nous serions ravis de vous entendre.",
+        "directContact": "Contact Direct",
+        "followUs": "Suivez-nous",
+        "email": "E-mail",
+        "website": "Site web",
+        "discordCommunity": "Communauté Discord",
+        "joinDiscord": "Rejoindre Discord",
+        "comingSoon": "Bientôt",
+        "tracks": {
+            "aiAgent": {
+                "title": "Constructeur d'Agents IA",
+                "subtitle": "2 Parcours Spécialisés",
+                "audience": "Étudiants & Diplômés",
+                "bullet1": "Apprenez à construire des agents IA intelligents de zéro",
+                "bullet2": "Maîtrisez l'ingénierie de prompts et les patterns d'orchestration",
+                "bullet3": "Travaillez avec des systèmes multi-agents réels",
+                "bullet4": "Conçu pour les étudiants et diplômés de l'université SC"
+            },
+            "fullStack": {
+                "title": "Ingénieur Full Stack avec IA",
+                "subtitle": "Développement Accéléré",
+                "audience": "Développeurs",
+                "bullet1": "Créez des applications prêtes pour la production à une vitesse sans précédent",
+                "bullet2": "Maîtrisez les workflows de développement assistés par l'IA",
+                "bullet3": "Compétences full stack : React, Node.js, PostgreSQL",
+                "bullet4": "Déployez de vrais produits SAAS avec le template MicroMind"
+            },
+            "founder": {
+                "title": "Parcours Rapide Fondateur",
+                "subtitle": "De l'Idée au Produit",
+                "audience": "Fondateurs",
+                "bullet1": "Créez votre application, site web et supports marketing avec l'IA",
+                "bullet2": "Aucune expertise technique approfondie requise",
+                "bullet3": "Lancez rapidement — optimisez les opérations de votre startup",
+                "bullet4": "Pour les fondateurs techniques et non-techniques"
+            }
+        }
+    },
+    "docs": {
+        "heroTitle": "Documentation",
+        "heroSubtitle": "Tout ce dont vous avez besoin pour déployer, étendre et maîtriser le Template MicroMind Base SAAS.",
+        "searchPlaceholder": "Rechercher dans la documentation...",
+        "backToHub": "Tous les docs",
+        "breadcrumbHub": "Docs",
+        "loading": "Chargement de la documentation...",
+        "notFound": "Document introuvable",
+        "notFoundDesc": "Le document que vous recherchez n'existe pas.",
+        "loadError": "Échec du chargement",
+        "loadErrorDesc": "Impossible de charger ce document. Veuillez réessayer.",
+        "comingSoon": "Bientôt disponible",
+        "document": "document",
+        "documents": "documents",
+        "aiTipTitle": "Utilisez-vous un assistant IA ?",
+        "aiTipDesc": "Faites lire .ai/constitution.md à votre IA en début de session pour le respect automatique des standards SDK, thème et multi-tenant.",
+        "categories": {
+            "gettingStarted": "Démarrage",
+            "gettingStartedDesc": "Guide de démarrage rapide, installation et instructions de déploiement.",
+            "frontendSdk": "SDK Frontend",
+            "frontendSdkDesc": "Bibliothèque de composants V4, thème Executive Gold et personnalisation.",
+            "backendSdk": "SDK Backend",
+            "backendSdkDesc": "SDK serveur avec 9 services, middleware, contrôleurs et utilitaires base de données.",
+            "aiIntegration": "Intégration IA",
+            "aiIntegrationDesc": "Agents MicroMind Core AI, configuration Co-Pilot et patterns d'orchestration.",
+            "saasFeatures": "Fonctionnalités SAAS",
+            "saasFeaturesDesc": "Multi-tenant, abonnements, quotas, gestion d'équipe et facturation.",
+            "deployment": "Déploiement",
+            "deploymentDesc": "Guides de déploiement production pour Vercel, AWS, Digital Ocean et VPS.",
+            "exampleApps": "Applications exemples",
+            "exampleAppsDesc": "MicroApps réelles construites avec ce template — apprenez par l'exemple.",
+            "goToMarket": "Mise en marché",
+            "goToMarketDesc": "Créez des sites web, des flyers et du contenu marketing avec des prompts AI.",
+            "i18n": "Internationalisation",
+            "i18nDesc": "Support multilingue, mises en page RTL et ajout de nouvelles langues.",
+            "sdkGallery": "Galerie SDK",
+            "sdkGalleryDesc": "Galerie visuelle de chaque composant SDK avec aperçus en direct."
+        },
+        "items": {
+            "quickStart": "Démarrage rapide",
+            "quickStartDesc": "Guide de déploiement assisté par IA en 10 étapes.",
+            "setup": "Guide d'installation",
+            "setupDesc": "Installation détaillée étape par étape avec prérequis et dépannage.",
+            "deployInstructions": "Instructions de déploiement",
+            "deployInstructionsDesc": "Instructions de déploiement prêtes pour l'IA pour un nouvel environnement.",
+            "readme": "README",
+            "readmeDesc": "Aperçu du projet, fonctionnalités, technologies et référence rapide.",
+            "v4Sdk": "Référence V4 SDK",
+            "v4SdkDesc": "Référence complète des composants avec props, patterns et exemples.",
+            "branding": "Guide de marque",
+            "brandingDesc": "Personnaliser logos, couleurs, polices et le thème Executive Gold.",
+            "backendSdk": "Guide SDK Backend",
+            "backendSdkDesc": "9 services, 8 middleware, contrôleurs, validateurs et utilitaires DB.",
+            "aiAgents": "Guide des agents IA",
+            "aiAgentsDesc": "Index complet des agents, architecture et démarrage rapide IA.",
+            "saas": "Architecture SAAS",
+            "saasDesc": "Multi-tenant, isolation des données, abonnements, quotas et facturation.",
+            "deployment": "Guide de déploiement",
+            "deploymentDesc": "4 options d'hébergement avec CI/CD, sécurité, monitoring et sauvegarde.",
+            "exCreditControl": "Contrôle de crédit",
+            "exCreditControlDesc": "Opérations de recouvrement, scoring de risque et décisions de crédit.",
+            "exOrderCycle": "Cycle de commandes",
+            "exOrderCycleDesc": "Traitement des bons de commande, réservation de stock et opérations IA.",
+            "exOtax": "OTax",
+            "exOtaxDesc": "Conformité TVA égyptienne avec 44 endpoints API alignés ETA.",
+            "exTeamSync": "TeamSync",
+            "exTeamSyncDesc": "Collaboration d'équipe avec projets, tâches, tableaux Kanban et CRM.",
+            "exOracleEbs": "Intégration Oracle ERP",
+            "exOracleEbsDesc": "Flux de données ETL, mapping bi-devises et synchronisation ERP.",
+            "extendingApp": "Étendre votre application",
+            "extendingAppDesc": "Séquences de prompts AI pour créer votre MVP et l'étendre page par page.",
+            "websiteMarketing": "Site web & Marketing",
+            "websiteMarketingDesc": "Créez des sites web, des publications marketing multilingues et du contenu promotionnel.",
+            "salesFlyers": "Flyers de vente",
+            "salesFlyersDesc": "Concevez des flyers A4 prêts à imprimer avec le design Executive Gold."
+        }
     },
     "common": {
         "welcome": "Bienvenue",
@@ -23,15 +496,16 @@
         "email": "E-mail",
         "password": "Mot de passe",
         "rememberMe": "Se souvenir de moi",
-        "forgotPassword": "Mot de passe oublié?",
+        "forgotPassword": "Mot de passe oublié ?",
         "loading": "Chargement...",
-        "error": "Erreur",
+        "error": "Une erreur s'est produite",
         "success": "Succès",
         "save": "Enregistrer",
         "cancel": "Annuler",
         "delete": "Supprimer",
         "edit": "Modifier",
         "search": "Rechercher",
-        "filter": "Filtrer"
+        "filter": "Filtrer",
+        "add": "Ajouter"
     }
 }

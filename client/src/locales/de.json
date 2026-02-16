@@ -1,20 +1,493 @@
 {
     "nav": {
-        "dashboard": "Armaturenbrett",
+        "dashboard": "Dashboard",
         "automation": "Automatisierung",
         "copilots": "Co-Piloten",
         "documents": "Dokumente",
         "analytics": "Analytik",
         "dashboards": "Dashboards",
-        "reportBot": "Bericht-Bot",
+        "reportBot": "Berichts-Bot",
         "reportsExplorer": "Berichts-Explorer",
         "settings": "Einstellungen",
         "documentation": "Dokumentation",
-        "campus": "Campus"
+        "campus": "Campus",
+        "teamSync": "TeamSync",
+        "projects": "Projekte",
+        "tasks": "Aufgaben",
+        "team": "Team",
+        "customers": "Kunden"
     },
     "copilots": {
         "title": "Co-Piloten",
         "subtitle": "KI-Assistenten"
+    },
+    "home": {
+        "welcome": "Willkommen",
+        "subtitle": "Hier ist Ihre TeamSync-Übersicht für heute.",
+        "kpis": {
+            "activeTasks": "Aktive Aufgaben",
+            "myTasks": "Meine offenen Aufgaben",
+            "overdue": "Überfällig",
+            "completionRate": "Abschlussrate"
+        },
+        "upcomingTasks": {
+            "title": "Meine anstehenden Aufgaben",
+            "empty": "Alles erledigt! Keine ausstehenden Aufgaben.",
+            "overdue": "Überfällig",
+            "viewAll": "Alle Aufgaben anzeigen",
+            "dueToday": "Heute fällig",
+            "noDueDate": "Kein Fälligkeitsdatum"
+        },
+        "recentActivity": {
+            "title": "Letzte Aktivitäten",
+            "empty": "Noch keine Aktivitäten."
+        },
+        "quickActions": {
+            "title": "Schnellaktionen",
+            "viewDashboards": "Dashboards anzeigen",
+            "newProject": "Neues Projekt",
+            "viewTasks": "Aufgaben anzeigen",
+            "askCopilot": "Co-Piloten fragen"
+        }
+    },
+    "projects": {
+        "title": "Projekte",
+        "subtitle": "Verwalten Sie die Projekte Ihres Teams und verfolgen Sie den Fortschritt",
+        "create": "Neues Projekt",
+        "searchPlaceholder": "Projekte durchsuchen...",
+        "allStatuses": "Alle Status",
+        "noProjects": "Noch keine Projekte. Erstellen Sie Ihr erstes Projekt.",
+        "confirmArchive": "Möchten Sie dieses Projekt wirklich archivieren?",
+        "archive": "Archivieren",
+        "progress": "Fortschritt",
+        "kanban": "Board",
+        "list": "Liste",
+        "notFound": "Projekt nicht gefunden",
+        "status": {
+            "active": "Aktiv",
+            "onHold": "Pausiert",
+            "completed": "Abgeschlossen",
+            "archived": "Archiviert"
+        },
+        "form": {
+            "name": "Projektname",
+            "namePlaceholder": "z.B. Website-Redesign",
+            "description": "Beschreibung",
+            "descriptionPlaceholder": "Kurze Beschreibung des Projekts...",
+            "color": "Farbe"
+        }
+    },
+    "tasks": {
+        "title": "Aufgaben",
+        "subtitle": "{{count}} Aufgaben insgesamt",
+        "create": "Neue Aufgabe",
+        "searchPlaceholder": "Aufgaben durchsuchen...",
+        "myTasks": "Meine Aufgaben",
+        "allTasks": "Alle Aufgaben",
+        "allStatuses": "Alle Status",
+        "allPriorities": "Alle Prioritäten",
+        "allTypes": "Alle Typen",
+        "noTasks": "Keine Aufgaben gefunden",
+        "noDescription": "Keine Beschreibung vorhanden",
+        "confirmDelete": "Möchten Sie diese Aufgabe wirklich löschen?",
+        "delete": "Aufgabe löschen",
+        "fields": {
+            "title": "Titel",
+            "description": "Beschreibung",
+            "status": "Status",
+            "priority": "Priorität",
+            "type": "Typ",
+            "assignee": "Zuständig",
+            "dueDate": "Fälligkeitsdatum",
+            "project": "Projekt",
+            "column": "Board-Spalte"
+        },
+        "form": {
+            "titlePlaceholder": "Was muss erledigt werden?",
+            "unassigned": "Nicht zugewiesen"
+        },
+        "priority": {
+            "critical": "Kritisch",
+            "high": "Hoch",
+            "medium": "Mittel",
+            "low": "Niedrig"
+        },
+        "type": {
+            "internal": "Intern",
+            "customer": "Kunde"
+        },
+        "drawer": {
+            "details": "Details",
+            "comments": "Kommentare",
+            "activity": "Aktivität",
+            "properties": "Eigenschaften",
+            "subtasks": "Unteraufgaben",
+            "labels": "Labels",
+            "addComment": "Kommentar schreiben...",
+            "noComments": "Noch keine Kommentare",
+            "noActivity": "Keine Aktivität aufgezeichnet"
+        }
+    },
+    "team": {
+        "title": "Team",
+        "subtitle": "Teams, Mitglieder und Arbeitsbelastung verwalten",
+        "createTeam": "Neues Team",
+        "deleteTeam": "Team löschen",
+        "addMember": "Mitglied hinzufügen",
+        "selectMember": "Mitglied auswählen...",
+        "members": "Mitglieder",
+        "noMembers": "Noch keine Mitglieder",
+        "noTeams": "Noch keine Teams erstellt",
+        "confirmDelete": "Möchten Sie dieses Team wirklich löschen?",
+        "tabs": {
+            "teams": "Teams",
+            "workload": "Arbeitsbelastung"
+        },
+        "form": {
+            "name": "Teamname",
+            "description": "Beschreibung",
+            "color": "Farbe"
+        },
+        "workload": {
+            "teamSize": "Teamgröße",
+            "activeTasks": "Aktive Aufgaben",
+            "avgLoad": "Durchschn. Last",
+            "distribution": "Arbeitsverteilung",
+            "overloaded": "Überlastet",
+            "balanced": "Ausgeglichen",
+            "underloaded": "Unterlastet"
+        }
+    },
+    "customers": {
+        "title": "Kunden",
+        "subtitle": "{{count}} Kunden registriert",
+        "create": "Neuer Kunde",
+        "edit": "Kunde bearbeiten",
+        "searchPlaceholder": "Kunden durchsuchen...",
+        "noCustomers": "Noch keine Kunden. Fügen Sie Ihren ersten Kunden hinzu.",
+        "confirmDeactivate": "Möchten Sie diesen Kunden wirklich deaktivieren?",
+        "tasks": "Aufgaben",
+        "form": {
+            "name": "Name",
+            "company": "Unternehmen",
+            "email": "E-Mail",
+            "phone": "Telefon",
+            "notes": "Notizen"
+        }
+    },
+    "notifications": {
+        "title": "Benachrichtigungen",
+        "markAllRead": "Alle als gelesen markieren",
+        "empty": "Keine Benachrichtigungen"
+    },
+    "dashboardsPage": {
+        "cockpit": "Intelligenz-Cockpit",
+        "title": "Analytik-Dashboards",
+        "welcome": "Willkommen zurück, {{name}}. Hier sind Ihre benutzerdefinierten analytischen Ansichten.",
+        "createDashboard": "Dashboard erstellen",
+        "searchPlaceholder": "Intelligenzschichten durchsuchen...",
+        "syncing": "Intelligenzschichten synchronisieren...",
+        "noDescription": "Keine Beschreibung",
+        "empty": {
+            "title": "Keine Dashboards gefunden",
+            "subtitle": "Es scheint, als hätten Sie noch keine KI-gestützten analytischen Ansichten erstellt.",
+            "create": "Erste Schicht erstellen"
+        },
+        "confirmDelete": "Möchten Sie dieses Dashboard wirklich löschen?",
+        "form": {
+            "badge": "Systemkomponente",
+            "createTitle": "Neue Intelligenzschicht",
+            "editTitle": "Intelligenzschicht bearbeiten",
+            "dashboardTitle": "Dashboard-Titel",
+            "titlePlaceholder": "z.B. Strategisches Vertriebsportfolio",
+            "executiveDescription": "Executive-Beschreibung",
+            "descriptionPlaceholder": "Beschreiben Sie das analytische Ziel für das Managementteam...",
+            "visualBranding": "Visuelles Branding (Cover)",
+            "selectMedia": "Medien auswählen",
+            "orDragDrop": "oder per Drag & Drop",
+            "uploadHint": "UNTERSTÜTZT: PNG, JPG • MAX 5MB",
+            "enterpriseVisibility": "Unternehmenssichtbarkeit (Öffentlich)",
+            "aiConfig": "KI-Intelligenz-Endpunktkonfiguration",
+            "queryGenerator": "Abfragegenerator (Pfad)",
+            "executionEngine": "Ausführungsengine (API)",
+            "autoSync": "Auto-Sync-Frequenz (Min)",
+            "realtime": "Echtzeit (Standard)",
+            "backToCockpit": "Zurück zum Cockpit",
+            "deploy": "Intel-Schicht bereitstellen",
+            "deploying": "Wird bereitgestellt...",
+            "errors": {
+                "titleRequired": "Titel ist erforderlich",
+                "createFailed": "Dashboard-Erstellung fehlgeschlagen"
+            }
+        }
+    },
+    "reportsExplorer": {
+        "title": "Berichts-Explorer",
+        "subtitle": "Erstellen Sie umfassende Berichte für Besuche, Inkasso und Finanzabstimmung",
+        "selectReport": "Bericht auswählen",
+        "chooseReport": "-- Bericht wählen --",
+        "parameters": "Berichtsparameter",
+        "execute": "Bericht ausführen",
+        "executing": "Wird ausgeführt...",
+        "results": "Berichtsergebnisse",
+        "recordsFound": "Datensatz/-sätze gefunden",
+        "exportCsv": "CSV exportieren",
+        "noData": "Keine Daten für die ausgewählten Parameter.",
+        "summaryView": "Zusammenfassung",
+        "detailedView": "Detailansicht",
+        "recentlyGenerated": "Kürzlich erstellt",
+        "columns": {
+            "reportName": "Berichtsname",
+            "date": "Datum",
+            "generatedBy": "Erstellt von",
+            "action": "Aktion"
+        }
+    },
+    "reportBot": {
+        "title": "Berichts-Bot",
+        "subtitle": "KI-gestützte Berichtserstellung und -analyse"
+    },
+    "aiChat": {
+        "title": "KI-Assistent",
+        "newChat": "Neuer Chat",
+        "context": {
+            "title": "Kontexteinstellungen",
+            "scope": "Bereich",
+            "mode": "Modus",
+            "scopes": {
+                "visitAudit": "Besuchsaudit",
+                "collections": "Inkasso",
+                "weeklyPlanning": "Wochenplanung",
+                "dailyActions": "Tägliche Aktionen",
+                "general": "Allgemeine Anfrage"
+            },
+            "modes": {
+                "conversation": "Konversation",
+                "reports": "Berichte",
+                "analysis": "Analyse"
+            }
+        },
+        "welcome": {
+            "title": "Willkommen beim KI-Assistenten",
+            "startBlank": "Leeren Chat starten"
+        },
+        "history": {
+            "title": "Chat-Verlauf",
+            "untitled": "Unbenannter Chat",
+            "delete": "Löschen",
+            "rename": "Umbenennen",
+            "confirmDelete": "Möchten Sie diesen Chat wirklich löschen?"
+        },
+        "input": {
+            "placeholder": "Nachricht eingeben...",
+            "send": "Senden"
+        },
+        "messages": {
+            "greeting": "Ich bin bereit, Ihnen bei {{context}} im {{mode}}-Modus zu helfen. Wählen Sie unten eine Frage aus.",
+            "welcomeBack": "Willkommen zurück! Lassen Sie uns mit {{context}} fortfahren.",
+            "thinking": "Wird verarbeitet...",
+            "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+            "serverError": "Server vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.",
+            "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
+            "visualization": "Hier ist die Visualisierung basierend auf Ihren Daten.",
+            "loadingImage": "Bild wird geladen...",
+            "imageError": "Bild konnte nicht geladen werden: {{error}}"
+        },
+        "prompts": {
+            "conversation": {
+                "recent": "Letzte Aktivität",
+                "team": "Teamübersicht",
+                "risk": "Risikobewertung"
+            },
+            "reports": {
+                "visits": "Besuchsberichte"
+            },
+            "analysis": {
+                "trends": "Trendanalyse"
+            },
+            "weeklyPlanning": {
+                "aging": "Alterungsanalyse",
+                "balance": "Saldenübersicht",
+                "efficiency": "Effizienzbericht",
+                "gap": "Lückenanalyse",
+                "location": "Standortzusammenfassung"
+            },
+            "dailyActions": {
+                "progress": "Tagesfortschritt",
+                "cash": "Barinkasso",
+                "closed": "Geschlossene Konten",
+                "compliance": "Compliance-Prüfung",
+                "efficiency": "Effizienzkennzahlen",
+                "reschedule": "Umgeplante Besuche",
+                "risk": "Risikowarnungen",
+                "stalled": "Blockierte Aktionen"
+            }
+        }
+    },
+    "documents": {
+        "title": "Dokumentenbibliothek",
+        "subtitle": "Besuchsdokumente, Fotos und Medien durchsuchen und verwalten",
+        "filters": {
+            "collector": "Inkassomitarbeiter",
+            "allCollectors": "Alle Mitarbeiter",
+            "startDate": "Startdatum",
+            "endDate": "Enddatum",
+            "mediaType": "Medientyp",
+            "allTypes": "Alle Typen",
+            "search": "Suche",
+            "searchPlaceholder": "Nach Kundenname suchen..."
+        },
+        "stats": {
+            "found": "Dokumente gefunden"
+        },
+        "empty": {
+            "title": "Keine Dokumente gefunden",
+            "subtitle": "Versuchen Sie, Ihre Filter oder den Datumsbereich anzupassen."
+        },
+        "mediaTypes": {
+            "photo": "Foto",
+            "sitePhoto": "Standortfoto",
+            "voiceNote": "Sprachnotiz",
+            "siteEvaluation": "Standortbewertung"
+        },
+        "outcomes": {
+            "SUCCESS_PAYMENT": "Zahlung erhalten",
+            "PTP": "Zahlungsversprechen",
+            "CLIENT_UNAVAILABLE": "Kunde nicht verfügbar",
+            "FAILURE_NO_CONTACT": "Kein Kontakt",
+            "REJECTED": "Abgelehnt"
+        },
+        "table": {
+            "dateTime": "Datum & Uhrzeit",
+            "customer": "Kunde",
+            "collector": "Mitarbeiter",
+            "mediaType": "Medientyp",
+            "outcome": "Ergebnis",
+            "gpsStatus": "GPS-Status",
+            "actions": "Aktionen",
+            "download": "Herunterladen"
+        }
+    },
+    "campus": {
+        "heroTitle": "MicroMind Campus",
+        "heroSubtitle": "Lernen Sie, mit KI zu bauen — ob Sie als Student Agenten entdecken, als Entwickler aufsteigen oder als Gründer Ihr nächstes Projekt starten.",
+        "sectionTitle": "Was Sie vom Campus erhalten",
+        "sectionSubtitle": "Drei fokussierte Tracks, die Sie vom Lernen zum Bauen echter Produkte führen.",
+        "contactTitle": "Kontakt aufnehmen",
+        "contactSubtitle": "Erreichen Sie uns über einen dieser Kanäle — wir freuen uns, von Ihnen zu hören.",
+        "directContact": "Direkter Kontakt",
+        "followUs": "Folgen Sie uns",
+        "email": "E-Mail",
+        "website": "Webseite",
+        "discordCommunity": "Discord-Community",
+        "joinDiscord": "Discord beitreten",
+        "comingSoon": "Demnächst",
+        "tracks": {
+            "aiAgent": {
+                "title": "KI-Agent Builder",
+                "subtitle": "2 Spezialisierte Tracks",
+                "audience": "Studenten & Absolventen",
+                "bullet1": "Lernen Sie, intelligente KI-Agenten von Grund auf zu bauen",
+                "bullet2": "Meistern Sie Prompt Engineering und Orchestrierungsmuster",
+                "bullet3": "Arbeiten Sie mit realen Multi-Agenten-Systemen",
+                "bullet4": "Konzipiert für SC-Universitätsstudenten und -absolventen"
+            },
+            "fullStack": {
+                "title": "Full Stack Engineer mit KI",
+                "subtitle": "Beschleunigte Entwicklung",
+                "audience": "Entwickler",
+                "bullet1": "Erstellen Sie produktionsreife Apps in beispiellosem Tempo",
+                "bullet2": "Meistern Sie KI-unterstützte Entwicklungsworkflows",
+                "bullet3": "Full-Stack-Kompetenz: React, Node.js, PostgreSQL",
+                "bullet4": "Stellen Sie echte SAAS-Produkte mit dem MicroMind-Template bereit"
+            },
+            "founder": {
+                "title": "Gründer Fast Track",
+                "subtitle": "Von der Idee zum Produkt",
+                "audience": "Gründer",
+                "bullet1": "Erstellen Sie Ihre App, Website und Marketingmaterialien mit KI",
+                "bullet2": "Keine tiefgreifende technische Expertise erforderlich",
+                "bullet3": "Schnell starten — optimieren Sie die internen Abläufe Ihres Startups",
+                "bullet4": "Für technische und nicht-technische Gründer"
+            }
+        }
+    },
+    "docs": {
+        "heroTitle": "Dokumentation",
+        "heroSubtitle": "Alles, was Sie brauchen, um das MicroMind Base SAAS Template bereitzustellen, zu erweitern und zu beherrschen.",
+        "searchPlaceholder": "Dokumentation durchsuchen...",
+        "backToHub": "Alle Dokumente",
+        "breadcrumbHub": "Doku",
+        "loading": "Dokumentation wird geladen...",
+        "notFound": "Dokument nicht gefunden",
+        "notFoundDesc": "Das gesuchte Dokument existiert nicht.",
+        "loadError": "Laden fehlgeschlagen",
+        "loadErrorDesc": "Dieses Dokument konnte nicht geladen werden. Bitte versuchen Sie es erneut.",
+        "comingSoon": "Demnächst",
+        "document": "Dokument",
+        "documents": "Dokumente",
+        "aiTipTitle": "Verwenden Sie einen KI-Coding-Assistenten?",
+        "aiTipDesc": "Lassen Sie Ihre KI .ai/constitution.md zu Beginn jeder Sitzung lesen für automatische Einhaltung von SDK-, Theme- und Multi-Tenancy-Standards.",
+        "categories": {
+            "gettingStarted": "Erste Schritte",
+            "gettingStartedDesc": "Schnellstartanleitung, Einrichtung und Bereitstellungsanweisungen.",
+            "frontendSdk": "Frontend SDK",
+            "frontendSdkDesc": "V4-Komponentenbibliothek, Executive Gold Theme und Branding-Anpassung.",
+            "backendSdk": "Backend SDK",
+            "backendSdkDesc": "Server-SDK mit 9 Diensten, Middleware, Controllern und Datenbank-Hilfsprogrammen.",
+            "aiIntegration": "KI-Integration",
+            "aiIntegrationDesc": "MicroMind Core KI-Agenten, Co-Pilot-Einrichtung und Orchestrierungsmuster.",
+            "saasFeatures": "SAAS-Funktionen",
+            "saasFeaturesDesc": "Multi-Tenancy, Abonnements, Kontingente, Teamverwaltung und Abrechnung.",
+            "deployment": "Bereitstellung",
+            "deploymentDesc": "Produktionsbereitstellungsleitfäden für Vercel, AWS, Digital Ocean und VPS.",
+            "exampleApps": "Beispielanwendungen",
+            "exampleAppsDesc": "Echte MicroApps, die mit diesem Template erstellt wurden — lernen Sie anhand von Beispielen.",
+            "goToMarket": "Markteinführung",
+            "goToMarketDesc": "Erstellen Sie Websites, Verkaufsflyer und Marketingmaterialien mit AI-Prompts.",
+            "i18n": "Internationalisierung",
+            "i18nDesc": "Mehrsprachige Unterstützung, RTL-Layouts und Hinzufügen neuer Sprachen.",
+            "sdkGallery": "SDK-Galerie",
+            "sdkGalleryDesc": "Visuelle Galerie jeder SDK-Komponente mit Live-Vorschau."
+        },
+        "items": {
+            "quickStart": "Schnellstart",
+            "quickStartDesc": "KI-unterstützter Bereitstellungsleitfaden in 10 Schritten.",
+            "setup": "Einrichtungsleitfaden",
+            "setupDesc": "Detaillierte schrittweise Installation mit Voraussetzungen und Fehlerbehebung.",
+            "deployInstructions": "Bereitstellungsanweisungen",
+            "deployInstructionsDesc": "KI-bereite Bereitstellungsanweisungen für eine neue Umgebung.",
+            "readme": "README",
+            "readmeDesc": "Projektübersicht, Funktionen, Technologie-Stack und Schnellreferenz.",
+            "v4Sdk": "V4 SDK-Referenz",
+            "v4SdkDesc": "Vollständige Komponentenreferenz mit Props, Mustern und Beispielen.",
+            "branding": "Branding-Leitfaden",
+            "brandingDesc": "Logos, Farben, Schriftarten und das Executive Gold Theme anpassen.",
+            "backendSdk": "Backend SDK-Leitfaden",
+            "backendSdkDesc": "9 Dienste, 8 Middleware, Controller, Validatoren und DB-Hilfsprogramme.",
+            "aiAgents": "KI-Agenten-Leitfaden",
+            "aiAgentsDesc": "Vollständiger Agentenindex, Architektur und Schnellstart für KI-Funktionen.",
+            "saas": "SAAS-Architektur",
+            "saasDesc": "Multi-Tenancy, Datenisolierung, Abonnements, Kontingente und Abrechnung.",
+            "deployment": "Bereitstellungsleitfaden",
+            "deploymentDesc": "4 Hosting-Optionen mit CI/CD, Sicherheit, Monitoring und Backup.",
+            "exCreditControl": "Kreditkontrolle",
+            "exCreditControlDesc": "Inkasso-Operationen, Risikobewertung und Echtzeit-Kreditentscheidungen.",
+            "exOrderCycle": "Bestellzyklus",
+            "exOrderCycleDesc": "Bestellbearbeitung, Bestandsreservierung und KI-gestützte Operationen.",
+            "exOtax": "OTax",
+            "exOtaxDesc": "Ägyptische MwSt-Konformität mit 44 ETA-konformen API-Endpunkten.",
+            "exTeamSync": "TeamSync",
+            "exTeamSyncDesc": "Teamzusammenarbeit mit Projekten, Aufgaben, Kanban-Boards und CRM.",
+            "exOracleEbs": "Oracle ERP-Integration",
+            "exOracleEbsDesc": "ETL-Datenfluss, Dual-Währungs-Mapping und ERP-Synchronisierung.",
+            "extendingApp": "Ihre App erweitern",
+            "extendingAppDesc": "AI-Prompt-Sequenzen zum Erstellen Ihres MVP und schrittweiser Erweiterung.",
+            "websiteMarketing": "Website & Marketing",
+            "websiteMarketingDesc": "Erstellen Sie Websites, mehrsprachige Marketingbeiträge und Werbeinhalte.",
+            "salesFlyers": "Verkaufsflyer",
+            "salesFlyersDesc": "Entwerfen Sie druckfertige A4-Verkaufsflyer im Executive Gold Design."
+        }
     },
     "common": {
         "welcome": "Willkommen",
@@ -25,13 +498,14 @@
         "rememberMe": "Angemeldet bleiben",
         "forgotPassword": "Passwort vergessen?",
         "loading": "Wird geladen...",
-        "error": "Fehler",
+        "error": "Etwas ist schiefgelaufen",
         "success": "Erfolg",
         "save": "Speichern",
         "cancel": "Abbrechen",
         "delete": "Löschen",
         "edit": "Bearbeiten",
         "search": "Suchen",
-        "filter": "Filtern"
+        "filter": "Filtern",
+        "add": "Hinzufügen"
     }
 }

@@ -1,0 +1,17 @@
+MicroMind Base SAAS Template
+Copyright 2026 AI MicroMind LLC
+
+This product includes software developed at AI MicroMind (https://aimicromind.com).
+
+The AI engine integration component is designed to work with MicroMind Core,
+which is derived from Flowise (https://github.com/FlowiseAI/Flowise),
+licensed under the Apache License 2.0.
+
+Third-party libraries used:
+- React (MIT License) - https://github.com/facebook/react
+- Express (MIT License) - https://github.com/expressjs/express
+- Prisma (Apache 2.0 License) - https://github.com/prisma/prisma
+- Vite (MIT License) - https://github.com/vitejs/vite
+- i18next (MIT License) - https://github.com/i18next/i18next
+- Recharts (MIT License) - https://github.com/recharts/recharts
+- Lucide React (ISC License) - https://github.com/lucide-icons/lucide

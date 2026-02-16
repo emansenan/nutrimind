@@ -236,11 +236,11 @@ const Sidebar = () => {
                 </div>
                 {/* System Links */}
                 <div className="footer-links">
-                    <button className="footer-link" onClick={() => window.open('/docs', '_blank')}>
+                    <button className="footer-link" onClick={() => handleNavigation('/docs')}>
                         <HelpCircle size={16} />
                         <span>{t('nav.documentation', 'Documentation')}</span>
                     </button>
-                    <button className="footer-link" onClick={() => window.open('/campus', '_blank')}>
+                    <button className="footer-link" onClick={() => handleNavigation('/campus')}>
                         <GraduationCap size={16} />
                         <span>{t('nav.campus', 'Campus')}</span>
                     </button>

@@ -37,16 +37,16 @@ const LoginScreen = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#0F0F0F',
+            backgroundColor: 'var(--bg-page)',
             padding: '2rem'
         }}>
             {/* Login Card */}
             <div style={{
                 width: '100%',
                 maxWidth: '440px',
-                backgroundColor: '#1C1C1C',
+                backgroundColor: 'var(--bg-surface)',
                 borderRadius: '12px',
-                border: '1px solid #333333',
+                border: '1px solid var(--border)',
                 overflow: 'hidden',
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
             }}>
@@ -54,7 +54,7 @@ const LoginScreen = () => {
                 <div style={{
                     padding: '2.5rem 2rem 2rem 2rem',
                     textAlign: 'center',
-                    borderBottom: '1px solid #333333'
+                    borderBottom: '1px solid var(--border)'
                 }}>
                     {/* Logo */}
                     <div style={{
@@ -79,7 +79,7 @@ const LoginScreen = () => {
                         margin: '0 0 0.5rem 0',
                         fontSize: '1.75rem',
                         fontWeight: '700',
-                        color: '#F2F3EC'
+                        color: 'var(--text-primary)'
                     }}>
                         Yasra
                     </h1>
@@ -103,7 +103,7 @@ const LoginScreen = () => {
                         margin: '0 0 1.5rem 0',
                         fontSize: '1.25rem',
                         fontWeight: '600',
-                        color: '#F2F3EC'
+                        color: 'var(--text-primary)'
                     }}>
                         Welcome Back
                     </h2>
@@ -116,14 +116,14 @@ const LoginScreen = () => {
                                 marginBottom: '0.5rem',
                                 fontSize: '0.875rem',
                                 fontWeight: '600',
-                                color: '#888888'
+                                color: 'var(--text-muted)'
                             }}>
                                 Username
                             </label>
                             <div style={{ position: 'relative' }}>
                                 <User
                                     size={18}
-                                    color="#666666"
+                                    color="var(--text-muted)"
                                     style={{
                                         position: 'absolute',
                                         left: '14px',
@@ -141,16 +141,16 @@ const LoginScreen = () => {
                                         width: '100%',
                                         padding: '12px 14px 12px 44px',
                                         borderRadius: '8px',
-                                        border: '1px solid #333333',
-                                        backgroundColor: '#262626',
-                                        color: '#F2F3EC',
+                                        border: '1px solid var(--border)',
+                                        backgroundColor: 'var(--bg-input)',
+                                        color: 'var(--text-primary)',
                                         fontSize: '0.95rem',
                                         outline: 'none',
                                         boxSizing: 'border-box',
                                         transition: 'border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)'
                                     }}
                                     onFocus={(e) => e.target.style.borderColor = '#E0AA3E'}
-                                    onBlur={(e) => e.target.style.borderColor = '#333333'}
+                                    onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                                     required
                                 />
                             </div>
@@ -163,14 +163,14 @@ const LoginScreen = () => {
                                 marginBottom: '0.5rem',
                                 fontSize: '0.875rem',
                                 fontWeight: '600',
-                                color: '#888888'
+                                color: 'var(--text-muted)'
                             }}>
                                 Password
                             </label>
                             <div style={{ position: 'relative' }}>
                                 <Lock
                                     size={18}
-                                    color="#666666"
+                                    color="var(--text-muted)"
                                     style={{
                                         position: 'absolute',
                                         left: '14px',
@@ -188,16 +188,16 @@ const LoginScreen = () => {
                                         width: '100%',
                                         padding: '12px 14px 12px 44px',
                                         borderRadius: '8px',
-                                        border: '1px solid #333333',
-                                        backgroundColor: '#262626',
-                                        color: '#F2F3EC',
+                                        border: '1px solid var(--border)',
+                                        backgroundColor: 'var(--bg-input)',
+                                        color: 'var(--text-primary)',
                                         fontSize: '0.95rem',
                                         outline: 'none',
                                         boxSizing: 'border-box',
                                         transition: 'border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)'
                                     }}
                                     onFocus={(e) => e.target.style.borderColor = '#E0AA3E'}
-                                    onBlur={(e) => e.target.style.borderColor = '#333333'}
+                                    onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                                     required
                                 />
                             </div>
@@ -295,8 +295,8 @@ const LoginScreen = () => {
                     padding: '1.5rem 2rem',
                     textAlign: 'center',
                     fontSize: '0.8rem',
-                    color: '#666666',
-                    borderTop: '1px solid #333333'
+                    color: 'var(--text-muted)',
+                    borderTop: '1px solid var(--border)'
                 }}>
                     <p style={{ margin: '0 0 0.25rem 0' }}>Version 1.0.0</p>
                     <p style={{ margin: 0 }}>Contact IT Support for access issues.</p>
